@@ -14,7 +14,7 @@ GitHubアカウント不要で追加できます。
 2. 以下のURLを入力して追加:
 
 ```
-https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/main/index.json
+https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/index.json
 ```
 
 3. 対象プロジェクトの `Manage Project` 画面に `Menou Tool` が表示されるのでInstall

@@ -16,7 +16,7 @@ else:
         "name": "menou-store VPM Listing",
         "author": "menou-store",
         "id": f"dev.menou2846.{name}",
-        "url": f"https://raw.githubusercontent.com/{repo}/main/index.json",
+        "url": f"https://raw.githubusercontent.com/{repo}/master/index.json",
         "packages": {},
     }
 
