@@ -20,7 +20,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.0.0.zip",
-          "zipSHA256": "270ac61f5d8a82bebe5e9211860f3d1575f5fcc9c18fc3306c34671299beed1e"
+          "zipSHA256": "cfb42800fccc2fa46ca84a5e58ad7f33b8089e4f25020e7ce88e2d5af2f3b0a0"
         }
       }
     },
@@ -40,7 +40,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.0.zip",
-          "zipSHA256": "1bff3662dfff18452c18751f93f9bbf5d90d7a249681df4084ce2e10c23b145b"
+          "zipSHA256": "2882ea2b3d89db61865d0e50be8838dace3fbed600713358025ddaa184e94182"
         }
       }
     },
@@ -57,7 +57,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.0.zip",
-          "zipSHA256": "9ebeaefb72c900c6a7d1bbdeeb9ad6505380eb5fdea48752828543cd720bfae8"
+          "zipSHA256": "af71bce921403eac0d3aa9c8cba184a8bbee2c98e5a915dfd3870d6d6737cd98"
         }
       }
     },
@@ -74,7 +74,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.0.0.zip",
-          "zipSHA256": "ff5c50a75ef85cf73267e8b7922abc7a0135c14bf985368f764907e316c820f8"
+          "zipSHA256": "e7b2137ec51db0c074cc734b49e95e996d882340f592d474ee2cb43f7b9e82c0"
         }
       }
     },
@@ -91,7 +91,27 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.0.zip",
-          "zipSHA256": "426d2cbf3495bc4dada85e7c980706e72b097d16c47d7797f4d3fdef6cfa69a6"
+          "zipSHA256": "5c0f7f2cee7e3c5e60bb9511f3a8c42452f4b0ebb063682db6245912e58fa8f6"
+        }
+      }
+    },
+    "com.menoustore.thumbnailcapture": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.thumbnailcapture",
+          "version": "1.0.0",
+          "displayName": "[menotool] Thumbnail Capture (Public)",
+          "description": "Post Processing Stack v2(PPv2)対応のサムネイル撮影Editor拡張。カメラ位置/シーンビュー視点から高解像度スクリーンショットを撮影",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "dependencies": {
+            "com.unity.postprocessing": "3.2.2"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.0.zip",
+          "zipSHA256": "3725f39fbbb8f24b3171d75fffc3bf59ee1b62b823a86407c2fe491c8f9635ac"
         }
       }
     }
