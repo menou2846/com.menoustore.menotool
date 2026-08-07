@@ -53,6 +53,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.menotool-1.0.2.zip",
           "zipSHA256": "787912f929331346c28556f158791f09fd095ad0318603278e396bef61968c85"
+        },
+        "1.1.0": {
+          "name": "com.menoustore.menotool",
+          "version": "1.1.0",
+          "displayName": "[menotool] Public Tools",
+          "description": "menou-store公開Editor拡張ツール集: Hierarchy Visualizer, PhysBone Auto Binder(今後他ツールも追加予定)",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.menotool-1.1.0.zip",
+          "zipSHA256": "8b96ae8441e87f799a88bc1fe4544dbf8db225d064412654ed617f05e8c8c627"
         }
       }
     }
