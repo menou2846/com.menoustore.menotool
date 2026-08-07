@@ -1,0 +1,28 @@
+{
+  "name": "menou-store VPM Listing",
+  "author": "menou-store",
+  "id": "dev.menou2846.com.menoustore.menotool",
+  "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/index.json",
+  "packages": {
+    "com.menoustore.menotool": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.menotool",
+          "version": "1.0.0",
+          "displayName": "Menou Tool",
+          "description": "menou-store公開用Editor拡張ツール集(今後追加予定)",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.menotool-1.0.0.zip",
+          "zipSHA256": "9d4fc09bdc5ab28be34c1b0cacae7f7a2da67ec89c4fd3e1a2ba77baa6b63073"
+        }
+      }
+    }
+  }
+}
