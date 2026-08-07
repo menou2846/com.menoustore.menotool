@@ -20,7 +20,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.0.0.zip",
-          "zipSHA256": "8bca7fe912b33840e7a26045d2327ec3e71623ed3adbc193467b0bcc39a27f49"
+          "zipSHA256": "270ac61f5d8a82bebe5e9211860f3d1575f5fcc9c18fc3306c34671299beed1e"
         }
       }
     },
@@ -40,7 +40,58 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.0.zip",
-          "zipSHA256": "41d2bcf3e2a03ccfa51578cd659368e3cef14bf93b8c60680a82cebfd2151b64"
+          "zipSHA256": "1bff3662dfff18452c18751f93f9bbf5d90d7a249681df4084ce2e10c23b145b"
+        }
+      }
+    },
+    "com.menoustore.armaturepathchecker": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.armaturepathchecker",
+          "version": "1.0.0",
+          "displayName": "[menotool] Armature Path Checker (Public)",
+          "description": "2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.0.zip",
+          "zipSHA256": "9ebeaefb72c900c6a7d1bbdeeb9ad6505380eb5fdea48752828543cd720bfae8"
+        }
+      }
+    },
+    "com.menoustore.colorvariantapplier": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.colorvariantapplier",
+          "version": "1.0.0",
+          "displayName": "[menotool] Color Variant Applier (Public)",
+          "description": "ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.0.0.zip",
+          "zipSHA256": "ff5c50a75ef85cf73267e8b7922abc7a0135c14bf985368f764907e316c820f8"
+        }
+      }
+    },
+    "com.menoustore.objectnamecleanup": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.objectnamecleanup",
+          "version": "1.0.0",
+          "displayName": "[menotool] Object Name Cleanup (Public)",
+          "description": "オブジェクト名の一括クリーンアップEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.0.zip",
+          "zipSHA256": "426d2cbf3495bc4dada85e7c980706e72b097d16c47d7797f4d3fdef6cfa69a6"
         }
       }
     }
