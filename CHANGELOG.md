@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.2.1] - 2026-08-07
+
+- Unityメニュー名を全ツールで `Meno Tools/<英語ツール名>` に統一(`Object Name Cleanup`は日本語表記から、`Thumbnail Capture`は`MenoTools`(スペースなし)表記から変更)
+
 ## [2.2.0] - 2026-08-07
 
 - `com.menoustore.thumbnailcapture`(PPv2対応サムネイル撮影ツール)を新規追加

@@ -1,6 +1,6 @@
 {
   "name": "com.menoustore.objectnamecleanup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "[menotool] Object Name Cleanup (Public)",
   "description": "オブジェクト名の一括クリーンアップEditor拡張",
   "unity": "2022.3",

@@ -1,6 +1,6 @@
 {
   "name": "com.menoustore.thumbnailcapture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "[menotool] Thumbnail Capture (Public)",
   "description": "Post Processing Stack v2(PPv2)対応のサムネイル撮影Editor拡張。カメラ位置/シーンビュー視点から高解像度スクリーンショットを撮影",
   "unity": "2022.3",

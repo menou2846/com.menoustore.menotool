@@ -12,7 +12,7 @@ public class MenoObjectNameCleanupTool : EditorWindow
     private bool doRename = true;
     private bool doBounds = true;
 
-    [MenuItem("Meno Tools/オブジェクト名クリーンアップ")]
+    [MenuItem("Meno Tools/Object Name Cleanup")]
     public static void ShowWindow()
     {
         GetWindow<MenoObjectNameCleanupTool>("meno Tools - Object Name Cleanup");
