@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2] - 2026-08-07
+
+- VCC上での表示名をPrivate版と揃えて `[menotool] Hierarchy Visualizer (Public)` に統一
+
 ## [1.0.1] - 2026-08-07
 
 - VCC上での表示名を `Menou Tool` から `VRC Hierarchy Visualizer (menou Tool)` に変更(中身がわかるように)

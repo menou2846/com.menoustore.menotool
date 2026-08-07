@@ -1,7 +1,7 @@
 {
   "name": "com.menoustore.menotool",
-  "version": "1.0.1",
-  "displayName": "VRC Hierarchy Visualizer (menou Tool)",
+  "version": "1.0.2",
+  "displayName": "[menotool] Hierarchy Visualizer (Public)",
   "description": "VRChatアバターのヒエラルキー構造を可視化するEditor拡張。menou-store公開ツール集(今後他ツールも追加予定)",
   "unity": "2022.3",
   "author": {
