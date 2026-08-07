@@ -1,7 +1,48 @@
 {
-    "name": "menou-store VPM Listing",
-    "author": "menou-store",
-    "id": "dev.menou2846.com.menoustore.menotool",
-    "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/index.json",
-    "packages": {}
+  "name": "menou-store VPM Listing",
+  "author": "menou-store",
+  "id": "dev.menou2846.com.menoustore.menotool",
+  "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/index.json",
+  "packages": {
+    "com.menoustore.hierarchyvisualizer": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.hierarchyvisualizer",
+          "version": "1.0.0",
+          "displayName": "[menotool] Hierarchy Visualizer (Public)",
+          "description": "VRChatアバターのヒエラルキー構造を可視化するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.0.0.zip",
+          "zipSHA256": "8bca7fe912b33840e7a26045d2327ec3e71623ed3adbc193467b0bcc39a27f49"
+        }
+      }
+    },
+    "com.menoustore.physboneautobinder": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.physboneautobinder",
+          "version": "1.0.0",
+          "displayName": "[menotool] PhysBone Auto Binder (Public)",
+          "description": "衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.0.zip",
+          "zipSHA256": "41d2bcf3e2a03ccfa51578cd659368e3cef14bf93b8c60680a82cebfd2151b64"
+        }
+      }
+    }
+  }
 }
