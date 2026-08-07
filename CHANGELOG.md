@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.0] - 2026-08-07
+
+- 単一パッケージ(`com.menoustore.menotool`)から `com.menoustore.hierarchyvisualizer` と `com.menoustore.physboneautobinder` の2つの個別パッケージへ分割(Private版と同じ「ツール1本ごと」方式に統一)
+- 表示名はそれぞれ `[menotool] Hierarchy Visualizer (Public)` / `[menotool] PhysBone Auto Binder (Public)`
+
 ## [1.1.0] - 2026-08-07
 
 - `PhysBoneAutoBinder`(旧 `PhysBoneRootFromNameTool`、Private版より移動)を追加

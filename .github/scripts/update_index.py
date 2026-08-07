@@ -2,9 +2,9 @@ import json
 import sys
 import pathlib
 
-name, version, sha256, url, repo = sys.argv[1:6]
+pkg_json_path, name, version, sha256, url, repo = sys.argv[1:7]
 
-pkg = json.loads(pathlib.Path("package.json").read_text(encoding="utf-8"))
+pkg = json.loads(pathlib.Path(pkg_json_path).read_text(encoding="utf-8"))
 pkg["url"] = url
 pkg["zipSHA256"] = sha256
 
@@ -15,7 +15,7 @@ else:
     index = {
         "name": "menou-store VPM Listing",
         "author": "menou-store",
-        "id": f"dev.menou2846.{name}",
+        "id": f"dev.menou2846.{repo.split('/')[-1]}",
         "url": f"https://raw.githubusercontent.com/{repo}/master/index.json",
         "packages": {},
     }

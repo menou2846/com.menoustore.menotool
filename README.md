@@ -1,11 +1,15 @@
-# Menou Tool
+# menotool (Public)
 
-menou-store が公開しているVRChatアバター制作用のEditor拡張ツール集です。今後Public化するツールもここに追加していきます。
+menou-store が公開しているVRChatアバター制作用のEditor拡張ツール集です。今後Public化するツールもここに追加していきます。Privateとは異なり、GitHubアカウント不要で誰でもインストールできます。
 
-## 含まれるもの
+## 含まれるパッケージ
 
-- `vrchierarchy_visualizer` - VRChatアバターのヒエラルキー構造を可視化するEditor拡張
-- `PhysBoneAutoBinder` - 衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張
+| パッケージID | 内容 |
+|---|---|
+| `com.menoustore.hierarchyvisualizer` | VRChatアバターのヒエラルキー構造を可視化するEditor拡張 |
+| `com.menoustore.physboneautobinder` | 衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張 |
+
+必要なものだけ個別にインストールできます。
 
 ## VCC(VRChat Creator Companion)での導入方法
 
@@ -18,19 +22,19 @@ GitHubアカウント不要で追加できます。
 https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/index.json
 ```
 
-3. 対象プロジェクトの `Manage Project` 画面に `Menou Tool` が表示されるのでInstall
+3. 対象プロジェクトの `Manage Project` 画面に上記パッケージが個別に表示されるので、必要なものだけInstall
 
 ## 開発者向け: 新バージョンの出し方
 
-1. `package.json` の `version` を上げてcommit・push
-2. バージョンタグを作成してpush
+1. 変更したいパッケージの `packages/<name>/package.json` の `version` を上げてcommit・push
+2. バージョンタグを作成してpush(全パッケージまとめてリリースされます)
 
 ```bash
-git tag v1.0.1
-git push origin v1.0.1
+git tag v1.2.0
+git push origin v1.2.0
 ```
 
-3. GitHub Actions(`.github/workflows/publish.yml`)が自動的にzipを作成し、`index.json` を更新してくれます
+3. GitHub Actions(`.github/workflows/publish.yml`)が全パッケージをzip化し、`index.json` を更新します
 4. `Actions` タブでワークフローが成功していることを確認してください
 
 ## 依存関係

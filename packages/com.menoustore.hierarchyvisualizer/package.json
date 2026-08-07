@@ -1,0 +1,14 @@
+{
+  "name": "com.menoustore.hierarchyvisualizer",
+  "version": "1.0.0",
+  "displayName": "[menotool] Hierarchy Visualizer (Public)",
+  "description": "VRChatアバターのヒエラルキー構造を可視化するEditor拡張",
+  "unity": "2022.3",
+  "author": {
+    "name": "menou-store",
+    "url": "https://github.com/menou2846"
+  },
+  "vpmDependencies": {
+    "com.vrchat.avatars": ">=3.7.0"
+  }
+}
