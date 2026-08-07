@@ -1,0 +1,11 @@
+{
+  "name": "com.menoustore.colorvariantapplier",
+  "version": "1.0.0",
+  "displayName": "[menotool] Color Variant Applier (Public)",
+  "description": "ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張",
+  "unity": "2022.3",
+  "author": {
+    "name": "menou-store",
+    "url": "https://github.com/menou2846"
+  }
+}

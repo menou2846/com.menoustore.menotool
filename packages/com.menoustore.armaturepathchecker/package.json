@@ -1,0 +1,11 @@
+{
+  "name": "com.menoustore.armaturepathchecker",
+  "version": "1.0.0",
+  "displayName": "[menotool] Armature Path Checker (Public)",
+  "description": "2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張",
+  "unity": "2022.3",
+  "author": {
+    "name": "menou-store",
+    "url": "https://github.com/menou2846"
+  }
+}

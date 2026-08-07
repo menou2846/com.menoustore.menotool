@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.0] - 2026-08-07
+
+- Private版から3パッケージを追加: `com.menoustore.objectnamecleanup` / `com.menoustore.colorvariantapplier`(旧 `prefabreplacer`) / `com.menoustore.armaturepathchecker`(旧 `structurecomparer`)
+
 ## [2.0.0] - 2026-08-07
 
 - 単一パッケージ(`com.menoustore.menotool`)から `com.menoustore.hierarchyvisualizer` と `com.menoustore.physboneautobinder` の2つの個別パッケージへ分割(Private版と同じ「ツール1本ごと」方式に統一)

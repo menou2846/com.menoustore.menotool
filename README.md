@@ -8,6 +8,9 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 |---|---|
 | `com.menoustore.hierarchyvisualizer` | VRChatアバターのヒエラルキー構造を可視化するEditor拡張 |
 | `com.menoustore.physboneautobinder` | 衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張 |
+| `com.menoustore.objectnamecleanup` | オブジェクト名の一括クリーンアップ |
+| `com.menoustore.colorvariantapplier` | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張 |
+| `com.menoustore.armaturepathchecker` | 2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張 |
 
 必要なものだけ個別にインストールできます。
 
