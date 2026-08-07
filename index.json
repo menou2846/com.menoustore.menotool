@@ -21,6 +21,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.menotool-1.0.0.zip",
           "zipSHA256": "9d4fc09bdc5ab28be34c1b0cacae7f7a2da67ec89c4fd3e1a2ba77baa6b63073"
+        },
+        "1.0.1": {
+          "name": "com.menoustore.menotool",
+          "version": "1.0.1",
+          "displayName": "VRC Hierarchy Visualizer (menou Tool)",
+          "description": "VRChatアバターのヒエラルキー構造を可視化するEditor拡張。menou-store公開ツール集(今後他ツールも追加予定)",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.menotool-1.0.1.zip",
+          "zipSHA256": "3435c4a5003d330f3a48276bbca831d0f0202a626873b393b68a47de24b22324"
         }
       }
     }
