@@ -11,6 +11,7 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 | `com.menoustore.objectnamecleanup` | オブジェクト名の一括クリーンアップ |
 | `com.menoustore.colorvariantapplier` | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張 |
 | `com.menoustore.armaturepathchecker` | 2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張 |
+| `com.menoustore.thumbnailcapture` | Post Processing Stack v2対応のサムネイル撮影Editor拡張(VRChat SDK不要、`com.unity.postprocessing`が必要) |
 
 必要なものだけ個別にインストールできます。
 

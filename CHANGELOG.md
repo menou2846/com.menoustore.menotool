@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.2.0] - 2026-08-07
+
+- `com.menoustore.thumbnailcapture`(PPv2対応サムネイル撮影ツール)を新規追加
+
 ## [2.1.0] - 2026-08-07
 
 - Private版から3パッケージを追加: `com.menoustore.objectnamecleanup` / `com.menoustore.colorvariantapplier`(旧 `prefabreplacer`) / `com.menoustore.armaturepathchecker`(旧 `structurecomparer`)
