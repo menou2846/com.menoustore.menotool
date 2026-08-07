@@ -5,6 +5,7 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 ## 含まれるもの
 
 - `vrchierarchy_visualizer` - VRChatアバターのヒエラルキー構造を可視化するEditor拡張
+- `PhysBoneAutoBinder` - 衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張
 
 ## VCC(VRChat Creator Companion)での導入方法
 
