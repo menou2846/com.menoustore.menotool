@@ -6,9 +6,12 @@ using UnityEditorInternal;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using MenouStore.License;
 
 public class ColorVariantApplier : EditorWindow
 {
+    private const string ProductId = "default";
+
     // UI State
     private Vector2 _scroll;
     private Vector2 _logScroll;
@@ -34,11 +37,22 @@ public class ColorVariantApplier : EditorWindow
     [MenuItem("Meno Tools/Color Variant Applier")]
     public static void Open()
     {
+        if (!LicenseAuth.IsAuthenticated(ProductId))
+        {
+            LicenseAuth.OpenAuthWindow(ProductId);
+            return;
+        }
+
         GetWindow<ColorVariantApplier>("Color Variant Applier");
     }
 
+    private bool _authenticated;
+
     private void OnEnable()
     {
+        _authenticated = LicenseAuth.IsAuthenticated(ProductId);
+        if (!_authenticated) return;
+
         Directory.CreateDirectory(PresetFolder);
         RefreshPresetList();
         LoadPresetByIndex(_selPreset);
@@ -124,6 +138,17 @@ public class ColorVariantApplier : EditorWindow
 
     private void OnGUI()
     {
+        if (!_authenticated)
+        {
+            EditorGUILayout.HelpBox("認証が必要です。一度ウィンドウを閉じてメニューから開き直してください。", MessageType.Warning);
+            if (GUILayout.Button("認証する"))
+            {
+                LicenseAuth.OpenAuthWindow(ProductId);
+                Close();
+            }
+            return;
+        }
+
         if (_presetNames == null) RefreshPresetList();
         _scroll = EditorGUILayout.BeginScrollView(_scroll);
 

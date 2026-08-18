@@ -9,11 +9,17 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 | `com.menoustore.hierarchyvisualizer` | VRChatアバターのヒエラルキー構造を可視化するEditor拡張 |
 | `com.menoustore.physboneautobinder` | 衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張 |
 | `com.menoustore.objectnamecleanup` | オブジェクト名の一括クリーンアップ |
-| `com.menoustore.colorvariantapplier` | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張 |
+| `com.menoustore.colorvariantapplier` | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張(BOOTH販売品・要ライセンス認証) |
 | `com.menoustore.armaturepathchecker` | 2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張 |
 | `com.menoustore.thumbnailcapture` | Post Processing Stack v2対応のサムネイル撮影Editor拡張(VRChat SDK不要、`com.unity.postprocessing`が必要) |
+| `com.menoustore.prefabgridplacer` | 選択したプレハブをグリッド配置するEditor拡張(BOOTH販売品・要ライセンス認証) |
 
 必要なものだけ個別にインストールできます。
+
+> BOOTHで販売しているツール(Prefab Grid Placer など)は初回起動時にパスワード認証が必要です。VCCに以下の`com.menoustore.license`リポジトリも追加してください:
+> ```
+> https://raw.githubusercontent.com/menou2846/com.menoustore.license/main/index.json
+> ```
 
 ## VCC(VRChat Creator Companion)での導入方法
 
