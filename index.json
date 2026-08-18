@@ -20,7 +20,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.0.0.zip",
-          "zipSHA256": "e579c90f201de8e874331efd662dd9cdc7465ccd8c4dfd6eb43ba765a3d01dad"
+          "zipSHA256": "4db0e4ddc468f65755acc281ae2f71dde13fdd78603fec8828c4c4f0834ca231"
         }
       }
     },
@@ -40,7 +40,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.0.zip",
-          "zipSHA256": "87f9a53178abc1a630eb0d3e50b402224d1a9acd61ca53020280c056c58907cf"
+          "zipSHA256": "8b293bc2674072ae19a0a9e1fc4e5ded8da0c6169c1eabeb721786f2c89303e8"
         }
       }
     },
@@ -57,7 +57,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.0.zip",
-          "zipSHA256": "727089eca3992910f7bc83b755bdf2cdaea8a8e5bc0690e1f861e73aa8492c54"
+          "zipSHA256": "c88b027af2b4b78c562336c7d64766f00940f14e41e131e898b88ade7328cbc5"
         }
       }
     },
@@ -75,6 +75,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.0.0.zip",
           "zipSHA256": "dfceef860fe17c25287e65aed9312ddd6eba2c62ca2800db21d4baf60543c241"
+        },
+        "1.1.0": {
+          "name": "com.menoustore.colorvariantapplier",
+          "version": "1.1.0",
+          "displayName": "[menotool] Color Variant Applier (Public)",
+          "description": "ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.0.zip",
+          "zipSHA256": "1dbe102e815b33832a10457d436a44b48a89989346ab50c8d15c1a3879c9b006"
         }
       }
     },
@@ -104,7 +120,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.1.zip",
-          "zipSHA256": "439f0e7dd00040e7f79e517eeb0b2201fb5126d55b58ee55558ff21998c5ae8d"
+          "zipSHA256": "7e72c388745bb0c16051e429d7b26cd577a1fb0965f29cf767457e5d9fbd0290"
         }
       }
     },
@@ -140,7 +156,27 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.1.zip",
-          "zipSHA256": "59947b0839cf1a50c45cd5da891f3d00d2e0ce6675175284541a14cb6b3c2f12"
+          "zipSHA256": "f191f6d2f4a0e08ed4c8a9ad5622cf7c9b2645bf8795ff16e1e5136f35bc99cc"
+        }
+      }
+    },
+    "com.menoustore.prefabgridplacer": {
+      "versions": {
+        "1.1.0": {
+          "name": "com.menoustore.prefabgridplacer",
+          "version": "1.1.0",
+          "displayName": "[menotool] Prefab Grid Placer (Public)",
+          "description": "選択したプレハブをグリッド配置するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.1.0.zip",
+          "zipSHA256": "5e542e293ff271a2e6e936a1fc1200203e76ba908c6a83755abaf367b657917c"
         }
       }
     }
