@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.7.0] - 2026-09-16
+
+- 有料/無料の入れ替え: `com.menoustore.physboneautobinder`(v1.1.0)を要認証(Fanbox限定)に、`com.menoustore.prefabgridplacer`(v1.2.0)を無料に変更
+
 ## [2.6.0] - 2026-09-16
 
 - `com.menoustore.hierarchyvisualizer`(v1.2.0): Projectフォルダの折りたたみ/展開機能を削除。実機(2022.3.22)で`CollapseAll`呼び出しが失敗する報告があり、内部API依存の切り分けが難航したため、安定して動くHierarchy側の折りたたみ/展開/選択中のみ折りたたむ機能に絞った

@@ -1,11 +1,9 @@
 using UnityEngine;
 using UnityEditor;
 using System.Linq;
-using MenouStore.License;
 
 public class SelectionArranger : EditorWindow
 {
-    private const string ProductId = "default";
     private enum ArrangeMode
     {
         X,
@@ -27,28 +25,11 @@ public class SelectionArranger : EditorWindow
  [MenuItem("Meno Tools/Prefab Grid Placer")]
     public static void Open()
     {
-        if (!LicenseAuth.IsAuthenticated(ProductId))
-        {
-            LicenseAuth.OpenAuthWindow(ProductId);
-            return;
-        }
-
         GetWindow<SelectionArranger>("Prefab Grid Placer");
     }
 
     private void OnGUI()
     {
-        if (!LicenseAuth.IsAuthenticated(ProductId))
-        {
-            EditorGUILayout.HelpBox("認証が必要です。一度ウィンドウを閉じてメニューから開き直してください。", MessageType.Warning);
-            if (GUILayout.Button("認証する"))
-            {
-                LicenseAuth.OpenAuthWindow(ProductId);
-                Close();
-            }
-            return;
-        }
-
         EditorGUILayout.LabelField("Prefab Grid Placer", EditorStyles.boldLabel);
         EditorGUILayout.Space();
 

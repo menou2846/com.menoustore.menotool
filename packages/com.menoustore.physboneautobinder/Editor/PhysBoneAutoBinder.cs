@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using MenouStore.License;
 
 #if VRC_SDK_VRCSDK3
 using VRC.SDK3.Dynamics.PhysBone.Components;
@@ -10,6 +11,8 @@ using VRC.SDK3.Dynamics.PhysBone.Components;
 
 public class PhysBoneAutoBinder : EditorWindow
 {
+    private const string ProductId = "default";
+
     [Header("検索対象")]
     public Transform armatureRoot;
     public Transform pbRootParent;
@@ -27,6 +30,12 @@ public class PhysBoneAutoBinder : EditorWindow
     [MenuItem("Meno Tools/PhysBone Auto Binder")]
     public static void ShowWindow()
     {
+        if (!LicenseAuth.IsAuthenticated(ProductId))
+        {
+            LicenseAuth.OpenAuthWindow(ProductId);
+            return;
+        }
+
         var window = GetWindow<PhysBoneAutoBinder>();
         window.titleContent = new GUIContent("PhysBone Auto Binder");
         window.Show();
@@ -34,6 +43,17 @@ public class PhysBoneAutoBinder : EditorWindow
 
     private void OnGUI()
     {
+        if (!LicenseAuth.IsAuthenticated(ProductId))
+        {
+            EditorGUILayout.HelpBox("認証が必要です。一度ウィンドウを閉じてメニューから開き直してください。", MessageType.Warning);
+            if (GUILayout.Button("認証する"))
+            {
+                LicenseAuth.OpenAuthWindow(ProductId);
+                Close();
+            }
+            return;
+        }
+
 #if !VRC_SDK_VRCSDK3
         EditorGUILayout.HelpBox("VRC SDK3 がプロジェクトに入っていません。", MessageType.Error);
         return;
