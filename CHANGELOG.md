@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.6.0] - 2026-09-16
+
+- `com.menoustore.hierarchyvisualizer`(v1.2.0): Projectフォルダの折りたたみ/展開機能を削除。実機(2022.3.22)で`CollapseAll`呼び出しが失敗する報告があり、内部API依存の切り分けが難航したため、安定して動くHierarchy側の折りたたみ/展開/選択中のみ折りたたむ機能に絞った
+- README: 認証必須ツールの配布先表記をBOOTHからFanboxに変更
+
 ## [2.5.0] - 2026-09-16
 
 - 全7パッケージの`displayName`から`(Public)`表記を廃止(ユーザーにとって意味がないため)。代わりに認証が必要なパッケージ(`com.menoustore.colorvariantapplier`, `com.menoustore.prefabgridplacer`)には`(要認証)`を明記
