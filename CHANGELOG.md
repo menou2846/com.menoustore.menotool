@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.0] - 2026-09-16
+
+- `com.menoustore.hierarchyvisualizer`(v1.1.0): Hierarchy/Projectをまとめて折りたたむ機能を追加
+  - `Meno Tools/Hierarchy Visualizer/`配下にHierarchy/Project個別の折りたたみ・展開、設定対象に従ったまとめ実行、設定ウィンドウ
+  - `GameObject`/`Assets`右クリックメニューからも実行可能(選択中オブジェクトのみ折りたたむコマンドも追加)
+  - 設定: Toolsメニューでの実行対象(Hierarchy/Project/両方)、Scene見出し・Assets/Packagesを開いたまま残すか、実行前確認ダイアログの有無
+  - Projectフォルダの折りたたみはUnity Editor内部APIに依存するため、対応していないバージョンではConsole警告のうえ安全に処理をスキップ
+
 ## [2.2.1] - 2026-08-07
 
 - Unityメニュー名を全ツールで `Meno Tools/<英語ツール名>` に統一(`Object Name Cleanup`は日本語表記から、`Thumbnail Capture`は`MenoTools`(スペースなし)表記から変更)
