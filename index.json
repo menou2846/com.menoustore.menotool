@@ -53,6 +53,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.1.2.zip",
           "zipSHA256": "598a5b9a04fa7327c216f3b616242c43d610c602948c772936b0fb0e6e05aba2"
+        },
+        "1.2.0": {
+          "name": "com.menoustore.hierarchyvisualizer",
+          "version": "1.2.0",
+          "displayName": "[menotool] Hierarchy Visualizer",
+          "description": "VRChatアバターのヒエラルキー構造を可視化し、Hierarchyのまとめ折りたたみ/展開も行えるEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.2.0.zip",
+          "zipSHA256": "09975385e926902f32f2d969a139a8557c5094022dd70e1103d8c9aafe0cb161"
         }
       }
     },
@@ -88,7 +104,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.1.zip",
-          "zipSHA256": "7a1a6d31d21aadedd8cb787065a87b56a1316f006dbfd275169bc4812868fa49"
+          "zipSHA256": "58ba7471eb2532af6ea9b2e4d43b99738068c79ffbb586b3d290e67761933550"
         }
       }
     },
@@ -118,7 +134,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.1.zip",
-          "zipSHA256": "63c1c61c9989b67a588f382f2a57ad1931a2f8f3d91bb383cb6a2c1955cf14cb"
+          "zipSHA256": "4903e4d802c543acea31957c26d848ebdb3ec22e4294caacc8b8ada79aeaa7d6"
         }
       }
     },
@@ -167,7 +183,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.1.zip",
-          "zipSHA256": "d74639db9c1fa08d606dbb3e0495965a592ede0ab669b05028f7a95194c7b537"
+          "zipSHA256": "fd88165a7d09f673dbb41e4f640df2efdfb8762f028c1bd18b7f6109117f858f"
         }
       }
     },
@@ -210,7 +226,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.2.zip",
-          "zipSHA256": "12993e2d5706efec699e8c0906851b6eb6ba31f0c4c98cb80ae3c9d7ecc682a9"
+          "zipSHA256": "be2366942d676d502a273ed51ec91386924118b1a0776cc1fadc41ce89c533f3"
         }
       }
     },
@@ -262,7 +278,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.2.zip",
-          "zipSHA256": "95f4ed4f0c5fbdad7c106e97c3932eb7be600ac06588b003ec9bf159ae742444"
+          "zipSHA256": "d6eb72186bcf8281b26e992f643f14c0da388fe167f29a01d37bdd91cde145fc"
         }
       }
     },
@@ -298,7 +314,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.1.1.zip",
-          "zipSHA256": "11e41eae4f9b08db866a2831c66954027c6e3f1bdb1621afdb6fb7667e7aa0e3"
+          "zipSHA256": "bcb59903b7e6b10310ad2d3abafc42f7889f218e94b2b674e4b9e1963e9f2850"
         }
       }
     }
