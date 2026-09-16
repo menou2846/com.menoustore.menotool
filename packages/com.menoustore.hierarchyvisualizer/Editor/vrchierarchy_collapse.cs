@@ -2,6 +2,7 @@
 // Unity Editor内部のTreeView実装(SceneHierarchyWindow / ProjectBrowser)をリフレクションで呼び出している。
 // 内部APIのため、Unityのバージョンによっては動作しない可能性がある(その場合はConsoleに警告を出すだけで例外は投げない)。
 using System;
+using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
@@ -249,7 +250,7 @@ public static class MenoHierarchyProjectCollapser
     {
         try
         {
-            var method = treeView.GetType().GetMethod(methodName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null);
+            var method = FindMethodInHierarchy(treeView.GetType(), methodName, Type.EmptyTypes);
             if (method == null) return false;
             method.Invoke(treeView, null);
             return true;
@@ -261,22 +262,121 @@ public static class MenoHierarchyProjectCollapser
         }
     }
 
+    // Type.GetMethod は非公開メンバーを基底クラスまで遡って探さないため、階層を自前で辿る。
+    private static MethodInfo FindMethodInHierarchy(Type type, string methodName, Type[] paramTypes)
+    {
+        for (var t = type; t != null; t = t.BaseType)
+        {
+            var method = t.GetMethod(methodName,
+                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly,
+                null, paramTypes, null);
+            if (method != null) return method;
+        }
+        return null;
+    }
+
+    private static FieldInfo FindFieldInHierarchy(Type type, string fieldName)
+    {
+        for (var t = type; t != null; t = t.BaseType)
+        {
+            var field = t.GetField(fieldName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            if (field != null) return field;
+        }
+        return null;
+    }
+
+    private static PropertyInfo FindPropertyInHierarchy(Type type, string propertyName)
+    {
+        for (var t = type; t != null; t = t.BaseType)
+        {
+            var prop = t.GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            if (prop != null) return prop;
+        }
+        return null;
+    }
+
+    // 実機でCollapseAll/ExpandAllが見つからない場合に、実際のメンバー名をConsoleへ出力して調査するための診断コマンド。
+    [MenuItem("Meno Tools/Hierarchy Visualizer/デバッグ: Projectツリー情報を表示")]
+    private static void DebugDumpProjectTreeInfo()
+    {
+        var browserType = typeof(Editor).Assembly.GetType("UnityEditor.ProjectBrowser");
+        if (browserType == null)
+        {
+            Debug.LogWarning("[Hierarchy Visualizer] ProjectBrowserが見つかりませんでした。");
+            return;
+        }
+        var browser = GetOrOpenWindow(browserType, "Window/General/Project");
+        if (browser == null)
+        {
+            Debug.LogWarning("[Hierarchy Visualizer] Projectウィンドウを取得できませんでした。");
+            return;
+        }
+
+        object treeView = GetInstanceField(browser, browserType, "m_FolderTree")
+                        ?? GetInstanceField(browser, browserType, "m_AssetTree");
+        if (treeView == null)
+        {
+            Debug.LogWarning("[Hierarchy Visualizer] m_FolderTree / m_AssetTree のどちらも取得できませんでした。ProjectBrowserのフィールド一覧: " +
+                string.Join(", ", browserType.GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Select(f => f.Name)));
+            return;
+        }
+
+        var log = new System.Text.StringBuilder();
+        log.AppendLine($"[Hierarchy Visualizer] treeView 実行時型: {treeView.GetType().FullName}");
+        log.AppendLine("継承チェーン: " + string.Join(" -> ", TypeChain(treeView.GetType())));
+
+        log.AppendLine("Collapse/Expand を含むメソッド:");
+        foreach (var t in TypeChain(treeView.GetType()))
+        {
+            var methods = t.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+                .Where(m => m.Name.IndexOf("collapse", StringComparison.OrdinalIgnoreCase) >= 0
+                         || m.Name.IndexOf("expand", StringComparison.OrdinalIgnoreCase) >= 0);
+            foreach (var m in methods)
+                log.AppendLine($"  [{t.Name}] {m.Name}({string.Join(", ", m.GetParameters().Select(p => p.ParameterType.Name))})");
+        }
+
+        var dataProperty = FindPropertyInHierarchy(treeView.GetType(), "data");
+        var data = dataProperty?.GetValue(treeView);
+        if (data != null)
+        {
+            log.AppendLine($"data 実行時型: {data.GetType().FullName}");
+            foreach (var t in TypeChain(data.GetType()))
+            {
+                var methods = t.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+                    .Where(m => m.Name.IndexOf("expand", StringComparison.OrdinalIgnoreCase) >= 0);
+                foreach (var m in methods)
+                    log.AppendLine($"  [data:{t.Name}] {m.Name}({string.Join(", ", m.GetParameters().Select(p => p.ParameterType.Name))})");
+            }
+        }
+        else
+        {
+            log.AppendLine("data プロパティは見つかりませんでした。");
+        }
+
+        Debug.Log(log.ToString());
+    }
+
+    private static System.Collections.Generic.IEnumerable<Type> TypeChain(Type type)
+    {
+        for (var t = type; t != null && t != typeof(object); t = t.BaseType)
+            yield return t;
+    }
+
     // Assets / Packages(ルート直下の項目)だけ展開し直す。内部TreeView構造への依存度が高いためbest-effort。
     private static bool TryExpandTopLevel(object treeView)
     {
         try
         {
-            var treeViewType = treeView.GetType();
-            var dataProperty = treeViewType.GetProperty("data", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            var dataProperty = FindPropertyInHierarchy(treeView.GetType(), "data");
             var data = dataProperty?.GetValue(treeView);
             if (data == null) return false;
 
-            var rootProperty = data.GetType().GetProperty("root", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            var rootProperty = FindPropertyInHierarchy(data.GetType(), "root");
             var root = rootProperty?.GetValue(data) as TreeViewItem;
             if (root == null || !root.hasChildren) return false;
 
-            var setExpanded = data.GetType().GetMethod("SetExpanded", new[] { typeof(TreeViewItem), typeof(bool) })
-                            ?? data.GetType().GetMethod("SetExpanded", new[] { typeof(int), typeof(bool) });
+            var setExpanded = FindMethodInHierarchy(data.GetType(), "SetExpanded", new[] { typeof(TreeViewItem), typeof(bool) })
+                            ?? FindMethodInHierarchy(data.GetType(), "SetExpanded", new[] { typeof(int), typeof(bool) });
             if (setExpanded == null) return false;
 
             bool anyExpanded = false;
@@ -312,7 +412,7 @@ public static class MenoHierarchyProjectCollapser
 
     private static object GetInstanceField(object instance, Type type, string fieldName)
     {
-        var field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+        var field = FindFieldInHierarchy(type, fieldName);
         return field?.GetValue(instance);
     }
 

@@ -1,7 +1,7 @@
 {
   "name": "com.menoustore.colorvariantapplier",
-  "version": "1.1.0",
-  "displayName": "[menotool] Color Variant Applier (Public)",
+  "version": "1.1.1",
+  "displayName": "[menotool] Color Variant Applier (要認証)",
   "description": "ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張",
   "unity": "2022.3",
   "author": {

@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.5.0] - 2026-09-16
+
+- 全7パッケージの`displayName`から`(Public)`表記を廃止(ユーザーにとって意味がないため)。代わりに認証が必要なパッケージ(`com.menoustore.colorvariantapplier`, `com.menoustore.prefabgridplacer`)には`(要認証)`を明記
+- READMEのパッケージ一覧に🔓無料/🔒要パスワード認証の列を追加し、`com.menoustore.license`リポジトリの追加が必要な理由とパスワードの入手先(BOOTH)を明記
+
+## [2.4.1] - 2026-09-16
+
+- `com.menoustore.hierarchyvisualizer`(v1.1.1): Projectフォルダの折りたたみで実機報告された失敗を修正。`Type.GetMethod`/`GetField`/`GetProperty`が非公開メンバーを基底クラスまで遡って探さないため、階層を自前で辿るヘルパーに置き換え。原因特定用の診断コマンド(`Meno Tools/Hierarchy Visualizer/デバッグ: Projectツリー情報を表示`)を追加
+
 ## [2.4.0] - 2026-09-16
 
 - `com.menoustore.hierarchyvisualizer`(v1.1.0): Hierarchy/Projectをまとめて折りたたむ機能を追加
