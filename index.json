@@ -68,7 +68,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.2.0.zip",
-          "zipSHA256": "09975385e926902f32f2d969a139a8557c5094022dd70e1103d8c9aafe0cb161"
+          "zipSHA256": "104c32da2e7a36cae0f6dd188e82d15c4678f57502a1705948d3ffbac9d5ac45"
         }
       }
     },
@@ -105,6 +105,23 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.1.zip",
           "zipSHA256": "58ba7471eb2532af6ea9b2e4d43b99738068c79ffbb586b3d290e67761933550"
+        },
+        "1.1.0": {
+          "name": "com.menoustore.physboneautobinder",
+          "version": "1.1.0",
+          "displayName": "[menotool] PhysBone Auto Binder (要認証)",
+          "description": "衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0",
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.1.0.zip",
+          "zipSHA256": "3d897f07d1bbb09762d51564aba7cfb4075de2383fa27246726dfe8c03a8a379"
         }
       }
     },
@@ -134,7 +151,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.1.zip",
-          "zipSHA256": "4903e4d802c543acea31957c26d848ebdb3ec22e4294caacc8b8ada79aeaa7d6"
+          "zipSHA256": "1734e55479e1188b5d29d4bdfcffbb69d4342f4f5326a5f99f356d0324bd2d1d"
         }
       }
     },
@@ -183,7 +200,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.1.zip",
-          "zipSHA256": "fd88165a7d09f673dbb41e4f640df2efdfb8762f028c1bd18b7f6109117f858f"
+          "zipSHA256": "c7a04d0e328bc2adf4d9815372cf3daf87ad5448b9e5253702b1cde68dc4cc24"
         }
       }
     },
@@ -226,7 +243,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.2.zip",
-          "zipSHA256": "be2366942d676d502a273ed51ec91386924118b1a0776cc1fadc41ce89c533f3"
+          "zipSHA256": "5e231de0069df88733d58e3728c1c9c98ceca923955a1666cad2b0119f2dfc50"
         }
       }
     },
@@ -278,7 +295,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.2.zip",
-          "zipSHA256": "d6eb72186bcf8281b26e992f643f14c0da388fe167f29a01d37bdd91cde145fc"
+          "zipSHA256": "f7c6d356bce739284b76c55858180c0bc66b468797514e3881b186988a4f4da9"
         }
       }
     },
@@ -315,6 +332,19 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.1.1.zip",
           "zipSHA256": "bcb59903b7e6b10310ad2d3abafc42f7889f218e94b2b674e4b9e1963e9f2850"
+        },
+        "1.2.0": {
+          "name": "com.menoustore.prefabgridplacer",
+          "version": "1.2.0",
+          "displayName": "[menotool] Prefab Grid Placer",
+          "description": "選択したプレハブをグリッド配置するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.2.0.zip",
+          "zipSHA256": "52f09eb271c647af5dd5e0f40739e171520ec38d089ac8aa7fdfbaa2f843964c"
         }
       }
     }
