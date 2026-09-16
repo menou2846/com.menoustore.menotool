@@ -22,7 +22,7 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 > ```
 > https://raw.githubusercontent.com/menou2846/com.menoustore.license/main/index.json
 > ```
-> パスワードはFanboxの支援者限定記事で配布しています。
+> パスワードはFanbox( https://kannazukimenou.fanbox.cc/ )の支援者限定記事で配布しています。
 
 ## VCC(VRChat Creator Companion)での導入方法
 
