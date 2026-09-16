@@ -37,6 +37,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.1.0.zip",
           "zipSHA256": "52ede9ee72f1c36a94f5eab193bce87935496ca2dd9dc4cff011831d8ff5907d"
+        },
+        "1.1.2": {
+          "name": "com.menoustore.hierarchyvisualizer",
+          "version": "1.1.2",
+          "displayName": "[menotool] Hierarchy Visualizer",
+          "description": "VRChatアバターのヒエラルキー構造を可視化し、Hierarchy/Projectの折りたたみもまとめて行えるEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.1.2.zip",
+          "zipSHA256": "598a5b9a04fa7327c216f3b616242c43d610c602948c772936b0fb0e6e05aba2"
         }
       }
     },
@@ -57,6 +73,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.0.zip",
           "zipSHA256": "5fe00f14e4a9f1cce914486cf1b17aec1c1927a2ffb06ab46586495e382a3d1f"
+        },
+        "1.0.1": {
+          "name": "com.menoustore.physboneautobinder",
+          "version": "1.0.1",
+          "displayName": "[menotool] PhysBone Auto Binder",
+          "description": "衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.0.1.zip",
+          "zipSHA256": "7a1a6d31d21aadedd8cb787065a87b56a1316f006dbfd275169bc4812868fa49"
         }
       }
     },
@@ -74,6 +106,19 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.0.zip",
           "zipSHA256": "673423be379b3bba1f33fc2cbc59f7e238b2c517abb1d25cbb7a68419f3c64e8"
+        },
+        "1.0.1": {
+          "name": "com.menoustore.armaturepathchecker",
+          "version": "1.0.1",
+          "displayName": "[menotool] Armature Path Checker",
+          "description": "2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.1.zip",
+          "zipSHA256": "63c1c61c9989b67a588f382f2a57ad1931a2f8f3d91bb383cb6a2c1955cf14cb"
         }
       }
     },
@@ -107,6 +152,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.0.zip",
           "zipSHA256": "846bbea3963ad7ffbcbd3613e1135e5635f0663368022ad02e05143a01e4e2d2"
+        },
+        "1.1.1": {
+          "name": "com.menoustore.colorvariantapplier",
+          "version": "1.1.1",
+          "displayName": "[menotool] Color Variant Applier (要認証)",
+          "description": "ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.1.zip",
+          "zipSHA256": "d74639db9c1fa08d606dbb3e0495965a592ede0ab669b05028f7a95194c7b537"
         }
       }
     },
@@ -137,6 +198,19 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.1.zip",
           "zipSHA256": "4ed0130f4ad5e79fdb6de4dc8d531aa8f520b356e63ef0ecb98782de69d4d527"
+        },
+        "1.0.2": {
+          "name": "com.menoustore.objectnamecleanup",
+          "version": "1.0.2",
+          "displayName": "[menotool] Object Name Cleanup",
+          "description": "オブジェクト名の一括クリーンアップEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.2.zip",
+          "zipSHA256": "12993e2d5706efec699e8c0906851b6eb6ba31f0c4c98cb80ae3c9d7ecc682a9"
         }
       }
     },
@@ -173,6 +247,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.1.zip",
           "zipSHA256": "1e325327f5f4b18abea627532e8d5e5c1905cb303d7c0ff7b7fc16e6d469cc24"
+        },
+        "1.0.2": {
+          "name": "com.menoustore.thumbnailcapture",
+          "version": "1.0.2",
+          "displayName": "[menotool] Thumbnail Capture",
+          "description": "Post Processing Stack v2(PPv2)対応のサムネイル撮影Editor拡張。カメラ位置/シーンビュー視点から高解像度スクリーンショットを撮影",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "dependencies": {
+            "com.unity.postprocessing": "3.2.2"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.2.zip",
+          "zipSHA256": "95f4ed4f0c5fbdad7c106e97c3932eb7be600ac06588b003ec9bf159ae742444"
         }
       }
     },
@@ -193,6 +283,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.1.0.zip",
           "zipSHA256": "372e99c6d6deb5a78967445a82fc505e6ce45ce956a6527992caa5e6dec30f69"
+        },
+        "1.1.1": {
+          "name": "com.menoustore.prefabgridplacer",
+          "version": "1.1.1",
+          "displayName": "[menotool] Prefab Grid Placer (要認証)",
+          "description": "選択したプレハブをグリッド配置するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.1.1.zip",
+          "zipSHA256": "11e41eae4f9b08db866a2831c66954027c6e3f1bdb1621afdb6fb7667e7aa0e3"
         }
       }
     }
