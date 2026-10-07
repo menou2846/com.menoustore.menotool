@@ -1,6 +1,6 @@
 {
   "name": "com.menoustore.prefabgridplacer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "displayName": "[menotool] Prefab Grid Placer",
   "description": "選択したプレハブをグリッド配置するEditor拡張",
   "unity": "2022.3",

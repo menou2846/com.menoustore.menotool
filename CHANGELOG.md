@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.8.0] - 2026-10-07
+
+- Unityメニューを日本語化(ルートは`Meno Tools`のまま)。例: `Meno Tools/ヒエラルキー/すべて折りたたむ`、`Meno Tools/サムネイル撮影`、右クリックは`GameObject/Meno Tools/…`に統一。対象: 全7パッケージ(シェーダー名・パッケージIDは変更なし)
+
 ## [2.7.0] - 2026-09-16
 
 - 有料/無料の入れ替え: `com.menoustore.physboneautobinder`(v1.1.0)を要認証(Fanbox限定)に、`com.menoustore.prefabgridplacer`(v1.2.0)を無料に変更

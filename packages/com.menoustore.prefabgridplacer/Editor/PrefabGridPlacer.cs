@@ -22,7 +22,7 @@ public class SelectionArranger : EditorWindow
     private bool keepWorldRotation = true;
     private bool registerUndo = true;
 
- [MenuItem("Meno Tools/Prefab Grid Placer")]
+ [MenuItem("Meno Tools/選択オブジェクトをグリッド整列")]
     public static void Open()
     {
         GetWindow<SelectionArranger>("Prefab Grid Placer");

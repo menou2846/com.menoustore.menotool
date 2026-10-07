@@ -53,7 +53,7 @@ namespace MenoTools.ThumbnailCapture
 
         private int sceneViewLongEdge = 3840;
 
-        [MenuItem("Meno Tools/Thumbnail Capture")]
+        [MenuItem("Meno Tools/サムネイル撮影")]
         public static void ShowWindow()
         {
             var window = GetWindow<MenoThumbnailCapture>("Thumbnail Capture");

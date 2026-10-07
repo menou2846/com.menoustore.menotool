@@ -34,7 +34,7 @@ public class ColorVariantApplier : EditorWindow
     private int _selPreset = 0;
     private PrefabReplacerPreset _preset;
 
-    [MenuItem("Meno Tools/Color Variant Applier")]
+    [MenuItem("Meno Tools/カラバリ マテリアル一括コピー")]
     public static void Open()
     {
         if (!LicenseAuth.IsAuthenticated(ProductId))

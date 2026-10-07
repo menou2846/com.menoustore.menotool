@@ -27,7 +27,7 @@ private string newBoneName = "";
 
     private List<CompareResult> results = new();
 
-    [MenuItem("Meno Tools/Armature Path Checker")]
+    [MenuItem("Meno Tools/アーマチュア構造の比較チェック")]
     public static void ShowWindow()
     {
         GetWindow<ArmaturePathChecker>("Armature Path Checker");

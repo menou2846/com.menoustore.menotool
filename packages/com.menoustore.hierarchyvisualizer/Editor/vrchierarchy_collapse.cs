@@ -27,19 +27,19 @@ public static class MenoHierarchyProjectCollapser
 
     // ---------------- メニュー ----------------
 
-    [MenuItem("GameObject/menou-store/Hierarchyを折りたたむ", false, 0)]
+    [MenuItem("GameObject/Meno Tools/ヒエラルキーをすべて折りたたむ", false, 0)]
     private static void ContextMenuCollapseHierarchy() => RunCollapseHierarchy();
 
-    [MenuItem("GameObject/menou-store/選択中のみ折りたたむ", false, 1)]
+    [MenuItem("GameObject/Meno Tools/選択中のみ折りたたむ", false, 1)]
     private static void ContextMenuCollapseSelectionOnly() => CollapseSelectionOnly();
 
-    [MenuItem("Meno Tools/Hierarchy Visualizer/Hierarchyを折りたたむ")]
+    [MenuItem("Meno Tools/ヒエラルキー/すべて折りたたむ")]
     private static void MenuCollapseHierarchy() => RunCollapseHierarchy();
 
-    [MenuItem("Meno Tools/Hierarchy Visualizer/Hierarchyを展開する")]
+    [MenuItem("Meno Tools/ヒエラルキー/すべて展開する")]
     private static void MenuExpandHierarchy() => ExpandAllHierarchy();
 
-    [MenuItem("Meno Tools/Hierarchy Visualizer/折りたたみ設定...")]
+    [MenuItem("Meno Tools/ヒエラルキー/折りたたみ設定...")]
     private static void OpenSettings() => HierarchyCollapseSettingsWindow.Open();
 
     private static void RunCollapseHierarchy()

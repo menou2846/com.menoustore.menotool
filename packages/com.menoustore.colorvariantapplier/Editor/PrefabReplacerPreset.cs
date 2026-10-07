@@ -2,7 +2,7 @@
 // Place anywhere under Assets (not necessarily under Editor)
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PrefabReplacerPreset", menuName = "Meno Tools/Prefab Replacer Preset")]
+[CreateAssetMenu(fileName = "PrefabReplacerPreset", menuName = "Meno Tools/カラバリ プリセット")]
 public class PrefabReplacerPreset : ScriptableObject
 {
     [Header("Copy Options")]

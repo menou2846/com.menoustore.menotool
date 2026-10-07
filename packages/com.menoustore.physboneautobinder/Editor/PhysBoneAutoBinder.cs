@@ -27,7 +27,7 @@ public class PhysBoneAutoBinder : EditorWindow
     private bool _showOnlyUnmatched = false;
 
     // ★ メニューを Meno Tools に統合
-    [MenuItem("Meno Tools/PhysBone Auto Binder")]
+    [MenuItem("Meno Tools/PhysBone rootTransform自動設定")]
     public static void ShowWindow()
     {
         if (!LicenseAuth.IsAuthenticated(ProductId))

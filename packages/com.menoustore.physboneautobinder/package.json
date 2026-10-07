@@ -1,6 +1,6 @@
 {
   "name": "com.menoustore.physboneautobinder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "displayName": "[menotool] PhysBone Auto Binder (要認証)",
   "description": "衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張",
   "unity": "2022.3",
