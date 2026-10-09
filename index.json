@@ -85,6 +85,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.2.1.zip",
           "zipSHA256": "6797362e2a8381b562488fc7f865432c05f576d9a4bb1d328e008ecfae272c64"
+        },
+        "1.3.0": {
+          "name": "com.menoustore.hierarchyvisualizer",
+          "version": "1.3.0",
+          "displayName": "[menotool] Hierarchy Visualizer",
+          "description": "VRChatアバターのヒエラルキー構造を可視化し、Hierarchyのまとめ折りたたみ/展開も行えるEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.3.0.zip",
+          "zipSHA256": "4c3fa6f99921a029b85e487770fb4c224d94a6848414786bd153da5f58788577"
         }
       }
     },
@@ -155,6 +171,23 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.1.1.zip",
           "zipSHA256": "aed5cd2106622d9afec16dc354582be591210ba8b7077441c558e25caddd5859"
+        },
+        "1.2.0": {
+          "name": "com.menoustore.physboneautobinder",
+          "version": "1.2.0",
+          "displayName": "[menotool] PhysBone Auto Binder (要認証)",
+          "description": "衣装のPhysBoneのrootTransformと、VRC Constraintのソース(1個前提)を、名前でアバター本体のボーンに自動マッチングして一括設定するEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.7.0",
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.2.0.zip",
+          "zipSHA256": "a4f392e9a345e5dbaafe5c45fcd2a08bfd26b1a7983aad9fdb1d75c6671f31cd"
         }
       }
     },
@@ -197,7 +230,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.2.zip",
-          "zipSHA256": "2a5a7625cbfb4ef98c6ba0a6eecdfef2ddccfbbea769ce24c37c53dabb63cf62"
+          "zipSHA256": "c610d1e8d6ef010351deb8066126e84e166c5ec5f0a28cd40f7cf071fac8be39"
         }
       }
     },
@@ -262,7 +295,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.2.zip",
-          "zipSHA256": "aa23ff61ec9cc3a31dd167a6e5397ba9a82529e60beff8edc8d60fb29e0fcb2b"
+          "zipSHA256": "76c2ee3dc55c915b47c4d6d15622c6ffdecd394b3efc11f80dc83e3236ad9c14"
         }
       }
     },
@@ -318,7 +351,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.3.zip",
-          "zipSHA256": "6ca57825c1327342dd4bf1f98d955dd01debedf1becd96d879a306fb80aeb5f9"
+          "zipSHA256": "cfdea72dee7989eb7f865aa5b48bc15aae77ece415ddcafd150b29ac65a19637"
         }
       }
     },
@@ -386,7 +419,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.3.zip",
-          "zipSHA256": "2f281d9d78a2656355cee34e0d5c94e4da7ba04229d218f1b1ec4dbd057ffd56"
+          "zipSHA256": "476381e72871924aa94a80d2632ae3545043ec2204d5a6a85cf63456396dea25"
         }
       }
     },
@@ -448,7 +481,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.2.1.zip",
-          "zipSHA256": "0828afce7b12c48f134c36dd94c91bab1cf2a0db6dbbac8dac3dd7634e74cc3d"
+          "zipSHA256": "7e3f971a9e7ab07407d16753bfd1f9230abe2661aae5cd88f65e7cf7749566e1"
         }
       }
     }
