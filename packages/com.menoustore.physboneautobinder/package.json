@@ -1,8 +1,8 @@
 {
   "name": "com.menoustore.physboneautobinder",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "displayName": "[menotool] PhysBone Auto Binder (要認証)",
-  "description": "衣装のPhysBoneを名前でアバター本体のボーンに自動マッチングしてrootTransformを一括設定するEditor拡張",
+  "description": "衣装のPhysBoneのrootTransformと、VRC Constraintのソース(1個前提)を、名前でアバター本体のボーンに自動マッチングして一括設定するEditor拡張",
   "unity": "2022.3",
   "author": {
     "name": "menou-store",

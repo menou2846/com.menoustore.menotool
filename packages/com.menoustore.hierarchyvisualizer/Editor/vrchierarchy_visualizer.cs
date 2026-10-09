@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 public static class VRCHierarchyVisualizer
 {
     private const int ICON_SIZE = 16;
+    // 行の背景色の濃さ。文字の上に重ねて描くので、濃いとヒエラルキーが読めなくなる。0〜1で調整。
+    private const float ColorAlphaScale = 0.45f;
     private static readonly HashSet<GameObject> loggedObjects = new HashSet<GameObject>();
     private static readonly HashSet<string> VRCConstraintNames = new HashSet<string>
     {
@@ -32,91 +34,34 @@ public static class VRCHierarchyVisualizer
 
     private static bool IsVRCConstraint(Component c) => c != null && VRCConstraintNames.Contains(c.GetType().Name);
 
-    private static bool ConstraintHasEmptySource(Component c, out int emptyIndex)
+    // VRC Constraint のソースは配列ではなく固定スロット: Sources.source0〜15.SourceTransform、有効数は Sources.totalLength。
+    // (Unity 2022.3 / SDK 3.10.3 で実機確認。シリアライズ名は大文字始まり)
+    // 読めなければ false。total=ソース数、empty=そのうちTransformがNoneの数。
+    private static bool ReadConstraintSources(Component c, out int total, out int empty)
     {
-        emptyIndex = -1;
+        total = 0;
+        empty = 0;
         if (c == null || !IsVRCConstraint(c)) return false;
         try
         {
             var so = new SerializedObject(c);
-            so.UpdateIfRequiredOrScript();
-            // VRC系/Unity系の両方に対応（"sources" or "m_Sources"）
-            var sources = so.FindProperty("sources") ?? so.FindProperty("m_Sources");
-            if (sources == null || !sources.isArray) return false;
-
-            if (sources.arraySize == 0)
+            var len = so.FindProperty("Sources.totalLength");
+            if (len == null) return false;
+            total = len.intValue;
+            for (int i = 0; i < total && i < 16; i++)
             {
-                emptyIndex = -2; // 完全に空
-                return true;
+                var src = so.FindProperty($"Sources.source{i}.SourceTransform");
+                if (src == null) return false;
+                if (src.objectReferenceValue == null) empty++;
             }
-
-            for (int i = 0; i < sources.arraySize; i++)
-            {
-                var element = sources.GetArrayElementAtIndex(i);
-                // フィールド名の差異にできるだけ対応
-                var sourceTransform = element.FindPropertyRelative("sourceTransform")
-                                      ?? element.FindPropertyRelative("m_SourceTransform");
-                var weight = element.FindPropertyRelative("weight")
-                             ?? element.FindPropertyRelative("m_Weight");
-
-                bool noTransform = (sourceTransform == null) || (sourceTransform.objectReferenceValue == null);
-                bool zeroWeight = (weight != null && Mathf.Approximately(weight.floatValue, 0f));
-                // 「空」の定義: Transform が None もしくは Weight==0
-                if (noTransform || zeroWeight)
-                {
-                    emptyIndex = i;
-                    return true;
-                }
-            }
+            return true;
         }
         catch (System.Exception ex)
         {
             if (EnableVerboseLogging)
-                Debug.LogError($"[VRC Constraint Check] Exception on {c?.GetType().Name}: {ex.Message}");
+                Debug.LogError($"[VRC Constraint Check] Exception on {c.GetType().Name}: {ex.Message}");
+            return false;
         }
-        return false;
-    }
-
-    // 複数空ソースの件数カウント版
-    private static int CountEmptyConstraintSources(Component c, out int total)
-    {
-        total = 0;
-        int empties = 0;
-        if (c == null || !IsVRCConstraint(c)) return 0;
-        try
-        {
-            var so = new SerializedObject(c);
-            so.UpdateIfRequiredOrScript();
-            var sources = so.FindProperty("sources") ?? so.FindProperty("m_Sources");
-            if (sources == null || !sources.isArray) return 0;
-            total = sources.arraySize;
-            for (int i = 0; i < sources.arraySize; i++)
-            {
-                var element = sources.GetArrayElementAtIndex(i);
-                var sourceTransform = element.FindPropertyRelative("sourceTransform")
-                                      ?? element.FindPropertyRelative("m_SourceTransform");
-                var weight = element.FindPropertyRelative("weight")
-                             ?? element.FindPropertyRelative("m_Weight");
-                bool noTransform = (sourceTransform == null) || (sourceTransform.objectReferenceValue == null);
-                bool zeroWeight = (weight != null && Mathf.Approximately(weight.floatValue, 0f));
-                if (noTransform || zeroWeight) empties++;
-            }
-        }
-        catch (System.Exception ex)
-        {
-            if (EnableVerboseLogging)
-                Debug.LogError($"[VRC Constraint Count] Exception on {c?.GetType().Name}: {ex.Message}");
-        }
-        return empties;
-    }
-
-    private static void DrawWarningIcon(Rect selectionRect, string objectName, int index)
-    {
-        EditorGUI.DrawRect(selectionRect, new Color(1f, 0.3f, 0.3f, 0.6f));
-        var warningRect = new Rect(selectionRect.x + 4, selectionRect.y, 16, ICON_SIZE);
-        EditorGUI.LabelField(warningRect, "❗");
-
-        Debug.LogWarning($"[VRC Constraint Check] {objectName} has empty source at index {index}.");
     }
 
     private static Color? GetBackgroundColor(GameObject gameObject, Component[] components, bool hasEmptyVRCConstraint, bool hasAnyVRCConstraint)
@@ -204,44 +149,24 @@ public static class VRCHierarchyVisualizer
 
         var components = gameObject.GetComponents<Component>();
         
-        // まず VRC Constraint の空ソース件数を集計（複数対応）
-        int totalEmptySources = 0;
-        int totalSources = 0;
-        foreach (var c in components)
-        {
-            if (!IsVRCConstraint(c)) continue;
-            totalEmptySources += CountEmptyConstraintSources(c, out int t);
-            totalSources += t;
-        }
-
-        // VRC Constraint の空ソース検出をより堅牢に（最初の空のインデックス検出）
+        // VRC Constraint のソース有無(色分け用)。ソース0個、またはTransformがNoneのソースがあれば「ソースなし」扱い。
+        bool hasAnyVRCConstraint = false;
         bool hasEmptyVRCConstraint = false;
         foreach (var c in components)
         {
             if (!IsVRCConstraint(c)) continue;
-            if (ConstraintHasEmptySource(c, out int idx))
-            {
-                DrawWarningIcon(selectionRect, c.gameObject.name, idx);
+            hasAnyVRCConstraint = true;
+            if (ReadConstraintSources(c, out int total, out int empty) && (total == 0 || empty > 0))
                 hasEmptyVRCConstraint = true;
-            }
         }
-
-        bool hasAnyVRCConstraint = components.Any(IsVRCConstraint);
 
         Color? bgColor = GetBackgroundColor(gameObject, components, hasEmptyVRCConstraint, hasAnyVRCConstraint);
 
         if (bgColor.HasValue)
         {
-            EditorGUI.DrawRect(selectionRect, bgColor.Value);
-        }
-
-        // 空ソースの件数バッジ（複数空を視覚化）
-        if (totalEmptySources > 0)
-        {
-            var label = totalSources > 0 ? $"{totalEmptySources}/{totalSources}" : totalEmptySources.ToString();
-            var badgeRect = new Rect(selectionRect.x + 20, selectionRect.y, 40, ICON_SIZE);
-            var style = new GUIStyle(EditorStyles.miniBoldLabel) { alignment = TextAnchor.MiddleLeft };
-            EditorGUI.LabelField(badgeRect, label, style); // 例: "3/16"
+            var c = bgColor.Value;
+            c.a *= ColorAlphaScale;
+            EditorGUI.DrawRect(selectionRect, c);
         }
 
         // アイコン描画（Transform除外）

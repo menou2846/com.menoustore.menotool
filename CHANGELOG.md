@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.9.0] - 2026-10-09
+
+- `com.menoustore.physboneautobinder`(v1.2.0): VRC Constraint対応を追加。PhysBoneと同じ命名規則(`PB_胸`/`PB-[LeftArm]`/ボーン名そのまま)で、コンストレイントのソースにアバター本体のボーンを自動設定。ソースは1個前提で、既に入っていても名前で見つけたボーンに上書き(衣装対応での入れ間違い防止)。ソースが1個でないコンストレイントはエラー表示となり、解消するまでApplyできない。メニュー名を`Meno Tools/PhysBone・Constraint自動設定`に変更。ウィンドウ名・入力欄ラベル(`PB Root Parent`→`衣装 Root`)・列見出しをPhysBone/Constraint両対応の表記に変更。VRC SDKのソースは`Sources.source0〜15.SourceTransform`/`Sources.totalLength`の固定スロット構造(Unity 2022.3.22 / SDK 3.10.3で実機確認)
+
+- `com.menoustore.hierarchyvisualizer`(v1.3.0): VRC Constraintのソース有無の色分けを修正。従来は`sources`(小文字)を配列として読んでいたため空ソース検出が一度も働いていなかった。実際は`Sources.source0〜15.SourceTransform`/`Sources.totalLength`の固定スロット構造(Unity 2022.3.22 / SDK 3.10.3で実機確認)。ソース0個、またはTransformがNoneのソースがあれば橙、全ソースが入っていれば紫(色分けのみ。警告アイコン/バッジは付けない)。描画のたびにConsoleへ警告を出していた処理も削除。行の背景色が濃くてヒエラルキーが読みにくい問題も、全色の濃さを約45%に下げて解消(`ColorAlphaScale`で調整可)
+
 ## [2.8.0] - 2026-10-07
 
 - Unityメニューを日本語化(ルートは`Meno Tools`のまま)。例: `Meno Tools/ヒエラルキー/すべて折りたたむ`、`Meno Tools/サムネイル撮影`、右クリックは`GameObject/Meno Tools/…`に統一。対象: 全7パッケージ(シェーダー名・パッケージIDは変更なし)

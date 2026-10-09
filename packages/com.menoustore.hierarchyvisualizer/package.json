@@ -1,6 +1,6 @@
 {
   "name": "com.menoustore.hierarchyvisualizer",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "displayName": "[menotool] Hierarchy Visualizer",
   "description": "VRChatアバターのヒエラルキー構造を可視化し、Hierarchyのまとめ折りたたみ/展開も行えるEditor拡張",
   "unity": "2022.3",
