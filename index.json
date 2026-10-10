@@ -100,7 +100,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.3.0.zip",
-          "zipSHA256": "6008454597f3ac1f7a3e6e2772647645c012cf74c5606e2b51e65f511d750270"
+          "zipSHA256": "552f9f2ad76e76958c3fafc2bc4ce8ca1cefd0917ea59017596d2603fcab39e8"
         }
       }
     },
@@ -187,7 +187,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.2.0.zip",
-          "zipSHA256": "bccc6bc930f6a24cc9c32ee7e5add224740d9847c2402b05d2b70fff59f566be"
+          "zipSHA256": "07e10512c706a92696ca5c27bd61aa5e99c182b95b842cb8614b4f98c5d76a3c"
         }
       }
     },
@@ -230,7 +230,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.2.zip",
-          "zipSHA256": "77c035433638ec74e86db0ab5d47b77a04d09d2faff109c37d38ec2e6d74cbd4"
+          "zipSHA256": "ca6a7cc17141b9527c3183dab77e990969b4e46cc07d9f94266812f970c10169"
         }
       }
     },
@@ -295,7 +295,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.2.zip",
-          "zipSHA256": "fccb9f78fead7b450299968c7e005b278dba8c6557e96cca9f20816613b59478"
+          "zipSHA256": "c8f111b04a8fc35fc0099c44e1f4180ac43e039e918079d198c82df487ce3303"
         }
       }
     },
@@ -351,7 +351,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.3.zip",
-          "zipSHA256": "4203853016f1ebe0ef40064462643b61fb673f5362e14d377e20e50ef9b72e32"
+          "zipSHA256": "10566e7d33d50ebaad0d0dc6cb3eb887cc8bfd30d3f295957413836c780b1298"
         }
       }
     },
@@ -419,7 +419,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.3.zip",
-          "zipSHA256": "ebe157862e07c49138f2ab6668d7d68e38dc58a79d357fa2a5314764008258db"
+          "zipSHA256": "9e1b4a07c06c0c146f043c20e04a066f4607a99185d076f136adaa63bbbcb206"
         }
       }
     },
@@ -481,7 +481,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.2.1.zip",
-          "zipSHA256": "e6fa5ddc3836360100b7d794574e00e3677fcaf8b62fab9cd77dc33cd29ad06d"
+          "zipSHA256": "40dbbb904ab62e0c2867d4b9d8133d2a6896aff06aad8bb8b910bcb22cb57184"
         }
       }
     },
@@ -534,6 +534,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.animatorprefabduplicator-1.2.0.zip",
           "zipSHA256": "d7e3f0780c419c53bdaf000c0bdcdb4f278b943449aaea7d01f26ecdb4f8c259"
+        },
+        "1.2.1": {
+          "name": "com.menoustore.animatorprefabduplicator",
+          "version": "1.2.1",
+          "displayName": "[menotool] Folder GUID Duplicator (要認証)",
+          "description": "フォルダ(Prefab / Animator / Material / Texture / FBXなど)を丸ごと新しいGUIDで複製し、フォルダ内どうしの参照を複製側へ付け替えるEditor拡張。フォルダ外への参照・効いていないPrefab上書き・未使用アセットを調べて修正する参照チェック機能と、Animator付きPrefab単体の複製モードも搭載(元データは変更しない)",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.animatorprefabduplicator-1.2.1.zip",
+          "zipSHA256": "64eaf583ec8cedac4e4419b691a04f234dafc7a696183f81cfc09c5e9a3a2a25"
         }
       }
     }
