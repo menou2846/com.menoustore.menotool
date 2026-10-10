@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.11.0] - 2026-10-10
+
+- `com.menoustore.animatorprefabduplicator`(v1.1.0・要認証): **フォルダごと複製**をメイン機能として追加。フォルダ内の全アセット(Prefab/Controller/Clip/Material/Texture/FBXなど)を新GUIDで複製し、フォルダ内どうしの参照を複製側へ付け替える。スクリプト/シェーダー(.cs/.dll/.shader等)は複製せず共有。旧GUIDが残れば中止してロールバック。従来のPrefab単体複製はウィンドウのタブで残した。メニューを`Meno Tools/フォルダを新GUIDで複製`に変更、displayNameを`Folder GUID Duplicator`に変更(パッケージIDは公開済みのため`animatorprefabduplicator`のまま)。実プロジェクト(54ファイル)で、元フォルダ不変・GUID重複0・旧フォルダ参照0・Consoleエラー0を確認
+
 ## [2.10.0] - 2026-10-10
 
 - 新規: `com.menoustore.animatorprefabduplicator`(v1.0.0・Fanbox限定/要認証)。Animator付きPrefabをController / Override Controller / Animation Clip / Avatar Maskごと新しいGUIDで複製し、参照を複製先へ付け替える。元データは変更せず、旧参照が残れば自動でロールバック。通常Prefabに加え、FBX(Model Prefab)由来のVariant / Nested Prefabにも対応(元が`.prefab`のVariant / Nestedは安全のため停止)。ChatGPT製の原案を精査し、メニューを`Meno Tools/Animatorプレハブを新GUIDで複製`に統一。実際の衣装プレハブ6件でUnity 2022.3.22上の実機検証済み

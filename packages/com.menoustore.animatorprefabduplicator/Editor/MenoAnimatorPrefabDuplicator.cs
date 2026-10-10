@@ -17,6 +17,10 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
 {
     private const string ProductId = "default";
 
+    private int mode; // 0=フォルダごと複製(メイン) 1=Prefab単体
+    private DefaultAsset sourceFolder;
+    private MenoFolderGuidDuplicator.Plan folderPlan;
+    private string folderError;
     private GameObject sourcePrefab;
     private DefaultAsset outputParent;
     private string folderName = "";
@@ -25,7 +29,7 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
     private List<string> previewWarnings = new List<string>();
     private string previewError;
 
-    [MenuItem("Meno Tools/Animatorプレハブを新GUIDで複製")]
+    [MenuItem("Meno Tools/フォルダを新GUIDで複製")]
     private static void Open()
     {
         if (!LicenseAuth.IsAuthenticated(ProductId))
@@ -34,10 +38,18 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
             return;
         }
 
-        var window = GetWindow<MenoAnimatorPrefabDuplicator>("Animatorプレハブ複製");
-        var selected = Selection.activeObject as GameObject;
-        if (selected != null && PrefabUtility.IsPartOfPrefabAsset(selected))
+        var window = GetWindow<MenoAnimatorPrefabDuplicator>("GUID複製");
+        var selection = Selection.activeObject;
+        if (selection is DefaultAsset && AssetDatabase.IsValidFolder(AssetDatabase.GetAssetPath(selection)))
+        {
+            window.sourceFolder = (DefaultAsset)selection;
+            window.mode = 0;
+        }
+        else if (selection is GameObject selected && PrefabUtility.IsPartOfPrefabAsset(selected))
+        {
             window.sourcePrefab = selected;
+            window.mode = 1;
+        }
         if (window.outputParent == null)
             window.outputParent = AssetDatabase.LoadAssetAtPath<DefaultAsset>("Assets"); // 開き直しで保存先指定を消さない
         window.minSize = new Vector2(520, 400);
@@ -54,6 +66,14 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
                 LicenseAuth.OpenAuthWindow(ProductId);
                 Close();
             }
+            return;
+        }
+
+        mode = GUILayout.Toolbar(mode, new[] { "フォルダごと複製", "Prefab単体(従来)" }, GUILayout.Height(24));
+        EditorGUILayout.Space();
+        if (mode == 0)
+        {
+            DrawFolderMode();
             return;
         }
 
@@ -105,6 +125,108 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
             "元が.prefabのVariant・Nested Prefabは、旧Prefabとの隠れた参照を防ぐため処理を停止します。\n" +
             "Material / Texture / Mesh / FBX本体 / SDKアセットは複製対象外です。" +
             "FBX内蔵AnimationClipは独立した.animに抽出します。", MessageType.None);
+    }
+
+    private void DrawFolderMode()
+    {
+        EditorGUILayout.LabelField("フォルダごと新しいGUIDで複製", EditorStyles.boldLabel);
+        EditorGUILayout.HelpBox(
+            "フォルダ内のPrefab / Animator Controller / Clip / Mask / Material / Texture / FBXなどを全て新しいGUIDで複製し、" +
+            "複製フォルダ内どうしの参照を複製側へ付け替えます。元データは変更しません。\n" +
+            "スクリプト・シェーダー(.cs / .dll / .shader など)は複製すると型名が重複して壊れるため複製せず、元のものを共有します。",
+            MessageType.Info);
+
+        EditorGUI.BeginChangeCheck();
+        sourceFolder = (DefaultAsset)EditorGUILayout.ObjectField("複製元フォルダ", sourceFolder, typeof(DefaultAsset), false);
+        outputParent = (DefaultAsset)EditorGUILayout.ObjectField("保存先の親フォルダ", outputParent, typeof(DefaultAsset), false);
+        folderName = EditorGUILayout.TextField("新しいフォルダ名（省略可）", folderName);
+        if (EditorGUI.EndChangeCheck())
+        {
+            folderPlan = null;
+            folderError = null;
+        }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.BeginHorizontal();
+        if (GUILayout.Button("複製対象を調べる", GUILayout.Height(32)))
+            RefreshFolderPlan();
+        using (new EditorGUI.DisabledScope(sourceFolder == null))
+        {
+            if (GUILayout.Button("新しいGUIDで複製", GUILayout.Height(32)))
+                CreateFolderCopy();
+        }
+        EditorGUILayout.EndHorizontal();
+
+        if (!string.IsNullOrEmpty(folderError))
+            EditorGUILayout.HelpBox(folderError, MessageType.Error);
+        if (folderPlan != null)
+        {
+            EditorGUILayout.LabelField("複製先: " + folderPlan.Dest, EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("複製するファイル: " + folderPlan.Files.Count + " 件 (" + (folderPlan.TotalBytes / 1024 / 1024) + " MB)");
+            var byExt = folderPlan.Files.GroupBy(f => Path.GetExtension(f).ToLowerInvariant())
+                                        .OrderByDescending(g => g.Count()).Take(12)
+                                        .Select(g => g.Key + " ×" + g.Count());
+            EditorGUILayout.LabelField("   " + string.Join("  ", byExt.ToArray()), EditorStyles.miniLabel);
+            if (folderPlan.SkippedCode.Count > 0)
+                EditorGUILayout.HelpBox("複製せず共有する(スクリプト/シェーダー等): " + folderPlan.SkippedCode.Count + " 件\n" +
+                                        string.Join("\n", folderPlan.SkippedCode.Take(15).ToArray()), MessageType.None);
+            if (folderPlan.NoMeta.Count > 0)
+                EditorGUILayout.HelpBox(".metaが無く複製できないファイル: " + folderPlan.NoMeta.Count + " 件\n" +
+                                        string.Join("\n", folderPlan.NoMeta.Take(15).ToArray()), MessageType.Warning);
+        }
+    }
+
+    private void RefreshFolderPlan()
+    {
+        folderPlan = null;
+        folderError = null;
+        try
+        {
+            folderPlan = MenoFolderGuidDuplicator.BuildPlan(FolderPath(sourceFolder), FolderPath(outputParent, "Assets"), folderName);
+        }
+        catch (Exception ex)
+        {
+            folderError = ex.Message;
+        }
+    }
+
+    private static string FolderPath(DefaultAsset folder, string fallback = null)
+    {
+        return folder != null ? AssetDatabase.GetAssetPath(folder) : fallback;
+    }
+
+    private void CreateFolderCopy()
+    {
+        try
+        {
+            var plan = MenoFolderGuidDuplicator.BuildPlan(FolderPath(sourceFolder), FolderPath(outputParent, "Assets"), folderName);
+            string msg = "複製元: " + plan.Source + "\n複製先: " + plan.Dest + "\n" +
+                         "ファイル " + plan.Files.Count + " 件 (" + (plan.TotalBytes / 1024 / 1024) + " MB)\n" +
+                         (plan.SkippedCode.Count > 0 ? "スクリプト/シェーダー " + plan.SkippedCode.Count + " 件は複製せず共有します。\n" : "") +
+                         "元のフォルダは変更しません。処理しますか？";
+            if (!EditorUtility.DisplayDialog("フォルダを新GUIDで複製", msg, "複製する", "キャンセル")) return;
+
+            MenoFolderGuidDuplicator.Result result = MenoFolderGuidDuplicator.Duplicate(plan,
+                (text, p) => EditorUtility.DisplayProgressBar("フォルダを新GUIDで複製", text, p));
+            EditorUtility.ClearProgressBar();
+
+            var folder = AssetDatabase.LoadAssetAtPath<DefaultAsset>(result.DestFolder);
+            Selection.activeObject = folder;
+            EditorGUIUtility.PingObject(folder);
+            EditorUtility.DisplayDialog("複製完了",
+                "ファイル " + result.CopiedFiles + " 件を新しいGUIDで複製しました。\n" +
+                "参照の付け替え: " + result.ReplacedReferences + " 件 / 旧GUIDの残り: 0 件\n" +
+                "共有している外部アセット: " + result.SharedExternal + " 件\n" +
+                "詳細はGUID_Duplication_Report.txtを確認してください。", "OK");
+            folderPlan = null;
+        }
+        catch (Exception ex)
+        {
+            EditorUtility.ClearProgressBar();
+            Debug.LogError("[Folder GUID Duplicator] 複製失敗: " + ex);
+            EditorUtility.DisplayDialog("複製を中止しました", ex.Message +
+                "\n\n作成途中のフォルダがあれば自動で削除しました。元データは変更していません。", "OK");
+        }
     }
 
     private void RefreshPreview()
@@ -217,7 +339,7 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
                       .ToList();
     }
 
-    private static string CleanName(string name)
+    internal static string CleanName(string name)
     {
         if (string.IsNullOrWhiteSpace(name)) return "Animation";
         var invalid = new HashSet<char>(Path.GetInvalidFileNameChars());

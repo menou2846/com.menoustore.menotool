@@ -1,61 +1,54 @@
-# Animator Prefab Duplicator
+# Folder GUID Duplicator
 
-Animator付きのPrefabを、Animator Controller / Override Controller / Animation Clip / Avatar Maskごと**新しいGUIDで複製**し、参照を複製先へ付け替えるUnity Editor拡張です。旧衣装のPrefabを元に、旧データと完全に切り離した新衣装の土台を作る用途を想定しています。
+フォルダを丸ごと複製し、**全アセットに新しいGUIDを振って、複製フォルダ内どうしの参照を複製側へ付け替える**Unity Editor拡張です。過去に販売した「Animator付きPrefab」のフォルダを、旧商品とGUIDが衝突しない形で新しい衣装に取り込む用途を想定しています。
 
 **Fanbox限定ツールです。** 初回利用時にパスワード認証が必要です。パスワードは[Fanbox](https://kannazukimenou.fanbox.cc/)の支援者限定記事で配布しています(VCCに `com.menoustore.license` リポジトリも追加してください)。
 
+## なぜ必要か
+
+- Explorerなどで普通にコピーすると、`.meta` ごと同じGUIDになり、旧商品と新商品の両方を入れたお客さんの環境でGUIDが衝突します。
+- Unity上でコピーすると新しいGUIDにはなりますが、複製したPrefabが**旧フォルダのController / Clip / Materialを参照したまま**です。
+
+このツールは、フォルダ内の全ファイルを新GUIDでコピーし、フォルダ内の参照を複製側へ付け替えます。
+
 ## 使い方
 
-1. VCCの `menotool` から `[menotool] Animator Prefab Duplicator` をインストールします。
-2. Unityメニューの `Meno Tools > Animatorプレハブを新GUIDで複製` を開きます。
-3. `元Prefab` に、複製したいPrefabアセット(Projectウィンドウ内)を指定します。
-4. 必要に応じて保存先フォルダと新フォルダ名を指定します。
-5. `複製対象を調べる` で候補と警告を確認し、`新しいGUIDで複製` を押します。
-6. 出力フォルダ内の `GUID_Duplication_Report.txt` で、旧/新GUIDと検証結果を確認します。
-7. **新しい衣装に使うのは、必ず生成されたPrefab・Controller・Clipです。** Animator や Modular Avatar Merge Animator などのController参照が複製先を指しているか、Inspectorでも確認してください。
+1. VCCの `menotool` から `[menotool] Folder GUID Duplicator` をインストールします。
+2. 旧商品のフォルダを、このプロジェクトの `Assets` 内に置きます。
+3. Unityメニューの `Meno Tools > フォルダを新GUIDで複製` を開きます(Projectでフォルダを選んでから開くと、複製元に入ります)。
+4. `複製元フォルダ`・`保存先の親フォルダ`・`新しいフォルダ名(省略可)` を指定し、`複製対象を調べる` で内容を確認してから `新しいGUIDで複製` を押します。
+5. 複製先の `GUID_Duplication_Report.txt` で、複製したファイル・共有している外部アセット・旧GUID→新GUIDの対応を確認します。
+6. **新しい衣装に使うのは、必ず複製先のフォルダのものです。**
 
-## 複製対象
+## 複製するもの / しないもの
 
-- `.prefab` 本体
-- Animator Controller (`.controller`)・内部のState / Blend Tree など
-- Animator Override Controller (`.overrideController`)
-- Animation Clip (`.anim`)
-- Avatar Mask (`.mask`)
-- FBXなどに内蔵されたAnimation Clip(新しい `.anim` として抽出)
-- Prefabに直列化されているAnimator参照・その他コンポーネントのアニメーション参照
-
-このツールは**新規フォルダにのみ書き込みます**。元のPrefab・Controller・Clipとその `.meta` は変更しません。
-
-## 対応するPrefab
-
-| 種類 | 対応 |
+| 種類 | 扱い |
 |---|---|
-| 通常Prefab | ✅ |
-| FBX(Model Prefab)由来のVariant | ✅ |
-| FBX(Model Prefab)をNestedで含むPrefab | ✅ |
-| 元が `.prefab` のVariant / Nested Prefab | ❌ 停止(旧Prefabへのリンクが残るため) |
-| Missing Scriptを含むPrefab | ❌ 停止(先に参照を修復してください) |
+| Prefab / Animator Controller / Override Controller / Animation Clip / Avatar Mask / Material / Texture / FBX / 音源 / ScriptableObject など | 新GUIDで複製し、フォルダ内の参照を付け替え |
+| スクリプト・シェーダー(`.cs` `.dll` `.asmdef` `.shader` `.cginc` `.hlsl` `.compute` など) | **複製しない**(複製すると型名・シェーダー名が重複して壊れるため)。元のものを共有して参照 |
+| フォルダ外のアセット / Packages配下(VRChat SDKなど) | 複製しない。元のものを共有して参照(レポートに一覧) |
 
-元のアニメーション関連アセットへの参照が複製後に見つかった場合は、成功扱いにせず、今回作成したフォルダを削除して中止します。
+元のフォルダは**読み取りのみ**で、変更しません。処理に失敗した場合は、今回作成したフォルダだけを削除して中止します。旧GUIDへの参照が複製側に1件でも残る場合も、成功扱いにせず中止します。
 
-## 意図的に共有するもの
+## 制限・注意
 
-Material / Texture / Mesh / FBX本体 / Script、およびPackages配下のアセット(VRChat SDKの標準Avatar Maskなど)は複製しません。Animation Clipのカーブに保存された対象Objectのパス(例: `Body/Outfit`)も自動では書き換えません。新衣装側の階層名が変わる場合は、別途Clipのパスを調整してください。
+- **Force Text が必要です。** `Edit > Project Settings > Editor > Asset Serialization` を `Force Text` にしてください。参照を持つアセット(Prefab / Controller / Clip / Material など)がバイナリ形式だった場合は中止します。
+- フォルダ外のアセットを参照している箇所(別のPrefabを元にしたVariantなど)は、付け替えできません。レポートの `SHARED: assets outside the source folder` を確認し、必要ならそれらも同じフォルダ内に入れてから複製してください。
+- Animation Clip内の対象Objectのパス(例: `Body/Outfit`)は書き換えません。新衣装で階層名が変わる場合は別途調整してください。
+- テクスチャなどを含めて全部コピーするため、フォルダが大きいと時間と容量がかかります(確認ダイアログにサイズを表示します)。
 
-## 確認推奨
+## Prefab単体モード(従来機能)
 
-1. 旧Prefabと新Prefabで、GUIDとPrefabの参照先が別であること。
-2. 新ControllerのMotionが新Clipを指していること(Override Controllerの上書きClipも)。
-3. Animator・MA Merge Animatorなどの参照が新Controllerになっていること。
-4. 新Prefabのアニメーションが実際に再生され、パスが新衣装の階層と一致していること。
-5. 元の衣装のController / Clipを変更しても、新衣装に影響しないこと。
+ウィンドウ上部のタブで `Prefab単体(従来)` に切り替えると、Animator付きのPrefab1つについて、Controller / Override Controller / Clip / Avatar Maskだけを新GUIDで複製して参照を付け替えます(Materialなどは共有のまま)。FBX(Model Prefab)由来のVariant / Nested Prefabにも対応し、元が `.prefab` のVariant / Nestedは停止します。
 
 ## 動作確認の状況
 
-Unity 2022.3.22 で、実際の衣装・ギミックPrefab 6件(通常Prefab、FBX由来のVariant、FBXをNestedで含むPrefab)を複製し、次を確認しています。
+Unity 2022.3.22 の実プロジェクトで、Prefab・Controller・Clip・Material・Texture・FBXを含むフォルダ(54ファイル)を複製し、次を確認しています。
 
-- 元のPrefab・Controller・Clip・`.meta` がバイト単位で変更されていないこと
-- 複製したPrefabが旧アニメーションアセットを参照していないこと(0件)
-- 複製後のClipがすべて複製先フォルダに入っていること
+- 元フォルダの全ファイルと `.meta` がバイト単位で変更されていないこと
+- 新旧のGUIDが1件も重複しないこと
+- 複製後のPrefab・Controller・Materialが、旧フォルダのアセットを一切参照していないこと
+- 取り込み時にConsoleエラーが出ないこと
+- 保存先が複製元の中にある場合の拒否、バイナリ形式のアセットが混ざった場合の中止とロールバック
 
-アニメーションの実再生は未確認です。販売物に組み込む前に、新規複製の出力をテストしてください。
+アニメーションの実再生は未確認です。販売物に組み込む前に、複製結果をテストしてください。

@@ -1,8 +1,8 @@
 {
   "name": "com.menoustore.animatorprefabduplicator",
-  "version": "1.0.0",
-  "displayName": "[menotool] Animator Prefab Duplicator (要認証)",
-  "description": "Animator付きの通常Prefabを、Animator Controller / Override Controller / Animation Clip / Avatar Maskごと新しいGUIDで複製し、参照を複製先へ付け替えるEditor拡張(元データは変更しない)",
+  "version": "1.1.0",
+  "displayName": "[menotool] Folder GUID Duplicator (要認証)",
+  "description": "フォルダ(Prefab / Animator / Material / Texture / FBXなど)を丸ごと新しいGUIDで複製し、フォルダ内どうしの参照を複製側へ付け替えるEditor拡張。Animator付きPrefab単体の複製モードも搭載(元データは変更しない)",
   "unity": "2022.3",
   "author": {
     "name": "menou-store",
