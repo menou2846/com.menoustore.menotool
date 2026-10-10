@@ -100,7 +100,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.3.0.zip",
-          "zipSHA256": "4c3fa6f99921a029b85e487770fb4c224d94a6848414786bd153da5f58788577"
+          "zipSHA256": "294368df79d8e0e80d5c2b93ebbe0318ee0c414ccb25fdebd97eab8daa486500"
         }
       }
     },
@@ -187,7 +187,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.2.0.zip",
-          "zipSHA256": "a4f392e9a345e5dbaafe5c45fcd2a08bfd26b1a7983aad9fdb1d75c6671f31cd"
+          "zipSHA256": "191dee28e09a5e149642b395a55c739838926e3a953c2c2525976bf7e6f59aac"
         }
       }
     },
@@ -230,7 +230,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.2.zip",
-          "zipSHA256": "c610d1e8d6ef010351deb8066126e84e166c5ec5f0a28cd40f7cf071fac8be39"
+          "zipSHA256": "4ef8178c81365a3dd8a44abce5a1c361af20d799109c46ffcebc04f14c301959"
         }
       }
     },
@@ -295,7 +295,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.2.zip",
-          "zipSHA256": "76c2ee3dc55c915b47c4d6d15622c6ffdecd394b3efc11f80dc83e3236ad9c14"
+          "zipSHA256": "148e547368821673b41dddb184a21a5ca222ff5ba1c248dddb5abe26efb58bdf"
         }
       }
     },
@@ -351,7 +351,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.3.zip",
-          "zipSHA256": "cfdea72dee7989eb7f865aa5b48bc15aae77ece415ddcafd150b29ac65a19637"
+          "zipSHA256": "15449fbecfcc965ca99412dd132073cddecd4362025284b22aca741c047ff7d7"
         }
       }
     },
@@ -419,7 +419,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.3.zip",
-          "zipSHA256": "476381e72871924aa94a80d2632ae3545043ec2204d5a6a85cf63456396dea25"
+          "zipSHA256": "f3402279ccddad4fe9656a54bd4ff3f3158e6577ed00bb0d18b97e077bf215bf"
         }
       }
     },
@@ -481,7 +481,27 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.2.1.zip",
-          "zipSHA256": "7e3f971a9e7ab07407d16753bfd1f9230abe2661aae5cd88f65e7cf7749566e1"
+          "zipSHA256": "c1b7dfeb66d77e159fe4569b222ba1b54dc098e9840083040d770735161ecd0e"
+        }
+      }
+    },
+    "com.menoustore.animatorprefabduplicator": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.menoustore.animatorprefabduplicator",
+          "version": "1.0.0",
+          "displayName": "[menotool] Animator Prefab Duplicator (要認証)",
+          "description": "Animator付きの通常Prefabを、Animator Controller / Override Controller / Animation Clip / Avatar Maskごと新しいGUIDで複製し、参照を複製先へ付け替えるEditor拡張(元データは変更しない)",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.menoustore.license": "1.0.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.animatorprefabduplicator-1.0.0.zip",
+          "zipSHA256": "d0dea081f75246b2304deb9ef65109e549630040361dcd4cd56bbbe523af4e9b"
         }
       }
     }
