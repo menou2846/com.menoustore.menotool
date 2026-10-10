@@ -28,7 +28,6 @@ internal static class MenoFolderGuidDuplicator
     internal sealed class Result
     {
         public string DestFolder;
-        public string ReportPath;
         public int CopiedFiles;
         public int ReplacedReferences;
         public int LeftoverOldGuids;   // 複製側に残った旧GUID(0なら成功)
@@ -228,22 +227,12 @@ internal static class MenoFolderGuidDuplicator
             AppendList(rep, "WARNING: assets in the source folder that were NOT cloned and are still referenced", oldFolderLeft);
             AppendList(rep, "NOT cloned: scripts/shaders in the source folder", plan.SkippedCode);
             AppendList(rep, "NOT cloned: files without .meta", plan.NoMeta);
-            rep.AppendLine("GUID MAP (old path -> new GUID)");
-            foreach (var kv in map.OrderBy(k => oldPath[k.Key], StringComparer.Ordinal))
-                rep.AppendLine(oldPath[kv.Key] + "  " + kv.Key + " -> " + kv.Value);
-
-            string reportPath = plan.Dest + "/GUID_Duplication_Report.txt";
-            File.WriteAllText(Path.Combine(root, reportPath), rep.ToString(), new UTF8Encoding(false));
-            AssetDatabase.ImportAsset(reportPath);
-            AssetDatabase.Refresh();
-
             created = false; // ここから先は成功扱い。ロールバックしない
-            Debug.Log("[Folder GUID Duplicator] 複製に成功しました: " + plan.Source + " -> " + plan.Dest +
-                      "\nファイル " + plan.Files.Count + " 件 / 参照の付け替え " + replaced + " 件");
+            // レポートのファイルは作らない(複製フォルダに入ると、書き出し時に旧商品のパスが配布物へ混ざるため)。Consoleにだけ出す。
+            Debug.Log("[Folder GUID Duplicator] 複製に成功しました\n" + rep);
             return new Result
             {
                 DestFolder = plan.Dest,
-                ReportPath = reportPath,
                 CopiedFiles = plan.Files.Count,
                 ReplacedReferences = replaced,
                 LeftoverOldGuids = 0,

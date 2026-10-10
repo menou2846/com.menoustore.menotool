@@ -223,7 +223,7 @@ public sealed partial class MenoAnimatorPrefabDuplicator : EditorWindow
                 "ファイル " + result.CopiedFiles + " 件を新しいGUIDで複製しました。\n" +
                 "参照の付け替え: " + result.ReplacedReferences + " 件 / 旧GUIDの残り: 0 件\n" +
                 "共有している外部アセット: " + result.SharedExternal + " 件\n" +
-                "詳細はGUID_Duplication_Report.txtを確認してください。", "OK");
+                "一覧などの詳細はConsoleのログに出しています(複製フォルダにレポートファイルは作りません)。", "OK");
             folderPlan = null;
         }
         catch (Exception ex)
@@ -509,7 +509,7 @@ public sealed partial class MenoAnimatorPrefabDuplicator : EditorWindow
             EditorGUIUtility.PingObject(resultPrefab);
             EditorUtility.DisplayDialog("複製完了", "新しいPrefabとアニメーションを作成しました。\n" +
                 "旧アニメーション参照: 0件\n" +
-                "詳細はGUID_Duplication_Report.txtを確認してください。", "OK");
+                "GUIDの対応など詳細はConsoleのログに出しています。", "OK");
             RefreshPreview();
         }
         catch (Exception ex)
@@ -605,12 +605,6 @@ public sealed partial class MenoAnimatorPrefabDuplicator : EditorWindow
             if (warnings.Count == 0) idReport.AppendLine("None reported");
             else foreach (string warning in warnings.Distinct()) idReport.AppendLine(warning);
             idReport.AppendLine("Materials, textures, meshes, models, scripts and packages are NOT cloned.");
-
-            string reportPath = createdFolder + "/GUID_Duplication_Report.txt";
-            string projectRoot = Directory.GetParent(Application.dataPath).FullName;
-            File.WriteAllText(Path.Combine(projectRoot, reportPath), idReport.ToString(), Encoding.UTF8);
-            AssetDatabase.ImportAsset(reportPath);
-            AssetDatabase.Refresh();
 
             createdFolder = null; // ここから先は成功扱い。ロールバックしない
             Debug.Log("[Animator Prefab Duplicator] 複製に成功しました。\n" + idReport);

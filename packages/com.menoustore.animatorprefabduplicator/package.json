@@ -1,6 +1,6 @@
 {
   "name": "com.menoustore.animatorprefabduplicator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "displayName": "[menotool] Folder GUID Duplicator (要認証)",
   "description": "フォルダ(Prefab / Animator / Material / Texture / FBXなど)を丸ごと新しいGUIDで複製し、フォルダ内どうしの参照を複製側へ付け替えるEditor拡張。フォルダ外への参照・効いていないPrefab上書き・未使用アセットを調べて修正する参照チェック機能と、Animator付きPrefab単体の複製モードも搭載(元データは変更しない)",
   "unity": "2022.3",
