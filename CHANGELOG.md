@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.10.0] - 2026-10-10
+
+- 新規: `com.menoustore.animatorprefabduplicator`(v1.0.0・Fanbox限定/要認証)。Animator付きPrefabをController / Override Controller / Animation Clip / Avatar Maskごと新しいGUIDで複製し、参照を複製先へ付け替える。元データは変更せず、旧参照が残れば自動でロールバック。通常Prefabに加え、FBX(Model Prefab)由来のVariant / Nested Prefabにも対応(元が`.prefab`のVariant / Nestedは安全のため停止)。ChatGPT製の原案を精査し、メニューを`Meno Tools/Animatorプレハブを新GUIDで複製`に統一。実際の衣装プレハブ6件でUnity 2022.3.22上の実機検証済み
+
 ## [2.9.0] - 2026-10-09
 
 - `com.menoustore.physboneautobinder`(v1.2.0): VRC Constraint対応を追加。PhysBoneと同じ命名規則(`PB_胸`/`PB-[LeftArm]`/ボーン名そのまま)で、コンストレイントのソースにアバター本体のボーンを自動設定。ソースは1個前提で、既に入っていても名前で見つけたボーンに上書き(衣装対応での入れ間違い防止)。ソースが1個でないコンストレイントはエラー表示となり、解消するまでApplyできない。メニュー名を`Meno Tools/PhysBone・Constraint自動設定`に変更。ウィンドウ名・入力欄ラベル(`PB Root Parent`→`衣装 Root`)・列見出しをPhysBone/Constraint両対応の表記に変更。VRC SDKのソースは`Sources.source0〜15.SourceTransform`/`Sources.totalLength`の固定スロット構造(Unity 2022.3.22 / SDK 3.10.3で実機確認)

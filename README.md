@@ -15,6 +15,7 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 | 🔓 無料 | `com.menoustore.prefabgridplacer` | 選択したプレハブをグリッド配置するEditor拡張 |
 | 🔒 **Fanbox限定(要パスワード認証)** | `com.menoustore.colorvariantapplier` | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張 |
 | 🔒 **Fanbox限定(要パスワード認証)** | `com.menoustore.physboneautobinder` | 衣装のPhysBoneのrootTransformと、VRC Constraintのソース(1個前提)を、名前でアバター本体のボーンに自動マッチングして一括設定するEditor拡張 |
+| 🔒 **Fanbox限定(要パスワード認証)** | `com.menoustore.animatorprefabduplicator` | Animator付きPrefabをController / Clip / Avatar Maskごと新しいGUIDで複製し、参照を複製先へ付け替えるEditor拡張(元データは変更しない) |
 
 必要なものだけ個別にインストールできます。
 
