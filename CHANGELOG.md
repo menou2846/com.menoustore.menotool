@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.12.0] - 2026-10-10
+
+- `com.menoustore.animatorprefabduplicator`(v1.2.0・要認証): **参照チェック・修正**タブを追加。フォルダ内のアセットがフォルダ外のアセットを参照している場所を、`ファイル ▸ 階層 ▸ コンポーネント ▸ プロパティ`まで特定して一覧し、参照ごとに「参照を外す(None)」「フォルダに取り込む(新GUIDでコピーして付け替え)」を選べる。FBX作り直し後に残る「対象が存在しないPrefabInstanceの上書き」(見た目に影響しないゴミの参照)を自動判定し、上書きエントリごと削除できる。構造に関わる参照(m_Script/Variantの親/Nestedの対象)は外せない。フォルダ内から参照されていないアセットの一覧とゴミ箱送りも可能。変更前のファイルは`Library/MenoRefFixBackup/`へバックアップ。メニューを`Meno Tools/フォルダ複製・参照チェック`に変更。実プロジェクトの複製フォルダで、18件の外部参照を特定し、コピーで修正(見た目不変・Consoleエラー0)を確認
+
 ## [2.11.0] - 2026-10-10
 
 - `com.menoustore.animatorprefabduplicator`(v1.1.0・要認証): **フォルダごと複製**をメイン機能として追加。フォルダ内の全アセット(Prefab/Controller/Clip/Material/Texture/FBXなど)を新GUIDで複製し、フォルダ内どうしの参照を複製側へ付け替える。スクリプト/シェーダー(.cs/.dll/.shader等)は複製せず共有。旧GUIDが残れば中止してロールバック。従来のPrefab単体複製はウィンドウのタブで残した。メニューを`Meno Tools/フォルダを新GUIDで複製`に変更、displayNameを`Folder GUID Duplicator`に変更(パッケージIDは公開済みのため`animatorprefabduplicator`のまま)。実プロジェクト(54ファイル)で、元フォルダ不変・GUID重複0・旧フォルダ参照0・Consoleエラー0を確認

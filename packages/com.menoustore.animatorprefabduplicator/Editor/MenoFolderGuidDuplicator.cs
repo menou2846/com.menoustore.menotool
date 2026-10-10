@@ -35,38 +35,38 @@ internal static class MenoFolderGuidDuplicator
         public int SharedExternal;     // 複製せず共有参照しているアセット数(スクリプト/Packages/フォルダ外)
     }
 
-    static readonly HashSet<string> CodeExt = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+    internal static readonly HashSet<string> CodeExt = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
         ".cs", ".dll", ".asmdef", ".asmref", ".shader", ".cginc", ".hlsl", ".compute",
         ".shadergraph", ".shadersubgraph", ".rsp", ".so", ".dylib", ".a", ".bundle",
     };
 
     // GUID参照を持ちうるアセット。YAML(テキスト)でないと付け替えできないので、バイナリなら中止する。
-    static readonly HashSet<string> RefExt = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+    internal static readonly HashSet<string> RefExt = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
         ".prefab", ".asset", ".controller", ".overrideController", ".anim", ".mask", ".mat", ".unity",
         ".playable", ".mixer", ".physicMaterial", ".physicsMaterial2D", ".flare", ".guiskin",
         ".renderTexture", ".cubemap", ".lighting", ".signal", ".spriteatlas", ".terrainlayer",
     };
 
-    static readonly Regex GuidToken = new Regex("(?<![0-9A-Fa-f])[0-9a-f]{32}(?![0-9A-Fa-f])", RegexOptions.Compiled);
+    internal static readonly Regex GuidToken = new Regex("(?<![0-9A-Fa-f])[0-9a-f]{32}(?![0-9A-Fa-f])", RegexOptions.Compiled);
     static readonly Regex MetaGuid = new Regex("(?m)^guid: ([0-9a-f]{32})", RegexOptions.Compiled);
     // バイトを1:1で文字に対応させる(UTF-8/BOM/改行を含め、GUID以外のバイトを一切変えないため)
-    static readonly Encoding Latin1 = Encoding.GetEncoding("ISO-8859-1");
+    internal static readonly Encoding Latin1 = Encoding.GetEncoding("ISO-8859-1");
 
-    static string ProjectRoot() => Directory.GetParent(Application.dataPath).FullName;
+    internal static string ProjectRoot() => Directory.GetParent(Application.dataPath).FullName;
 
-    static bool IsHidden(string rel)
+    internal static bool IsHidden(string rel)
     {
         foreach (var seg in rel.Split('/'))
             if (seg.StartsWith(".", StringComparison.Ordinal) || seg.EndsWith("~", StringComparison.Ordinal)) return true;
         return false;
     }
 
-    static bool IsYaml(byte[] data) =>
+    internal static bool IsYaml(byte[] data) =>
         data.Length >= 5 && data[0] == '%' && data[1] == 'Y' && data[2] == 'A' && data[3] == 'M' && data[4] == 'L';
 
-    static string ReadGuid(string metaPath)
+    internal static string ReadGuid(string metaPath)
     {
         if (!File.Exists(metaPath)) return null;
         var m = MetaGuid.Match(File.ReadAllText(metaPath));

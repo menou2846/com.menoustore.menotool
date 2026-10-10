@@ -13,11 +13,11 @@ using Object = UnityEngine.Object;
 /// Never modifies the input prefab or source animation assets.
 /// Unity 2022.3 Editor only.
 /// </summary>
-public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
+public sealed partial class MenoAnimatorPrefabDuplicator : EditorWindow
 {
     private const string ProductId = "default";
 
-    private int mode; // 0=フォルダごと複製(メイン) 1=Prefab単体
+    private int mode; // 0=フォルダごと複製 1=参照チェック・修正 2=Prefab単体
     private DefaultAsset sourceFolder;
     private MenoFolderGuidDuplicator.Plan folderPlan;
     private string folderError;
@@ -29,7 +29,7 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
     private List<string> previewWarnings = new List<string>();
     private string previewError;
 
-    [MenuItem("Meno Tools/フォルダを新GUIDで複製")]
+    [MenuItem("Meno Tools/フォルダ複製・参照チェック")]
     private static void Open()
     {
         if (!LicenseAuth.IsAuthenticated(ProductId))
@@ -43,12 +43,13 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
         if (selection is DefaultAsset && AssetDatabase.IsValidFolder(AssetDatabase.GetAssetPath(selection)))
         {
             window.sourceFolder = (DefaultAsset)selection;
+            if (window.refFolder == null) window.refFolder = (DefaultAsset)selection;
             window.mode = 0;
         }
         else if (selection is GameObject selected && PrefabUtility.IsPartOfPrefabAsset(selected))
         {
             window.sourcePrefab = selected;
-            window.mode = 1;
+            window.mode = 2;
         }
         if (window.outputParent == null)
             window.outputParent = AssetDatabase.LoadAssetAtPath<DefaultAsset>("Assets"); // 開き直しで保存先指定を消さない
@@ -69,11 +70,16 @@ public sealed class MenoAnimatorPrefabDuplicator : EditorWindow
             return;
         }
 
-        mode = GUILayout.Toolbar(mode, new[] { "フォルダごと複製", "Prefab単体(従来)" }, GUILayout.Height(24));
+        mode = GUILayout.Toolbar(mode, new[] { "フォルダごと複製", "参照チェック・修正", "Prefab単体(従来)" }, GUILayout.Height(24));
         EditorGUILayout.Space();
         if (mode == 0)
         {
             DrawFolderMode();
+            return;
+        }
+        if (mode == 1)
+        {
+            DrawRefMode();
             return;
         }
 
