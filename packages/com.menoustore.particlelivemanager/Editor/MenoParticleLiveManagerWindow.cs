@@ -30,8 +30,8 @@ namespace Menou.ParticleLiveManager
         string report;
         int recordingRequest;
         Vector2 scroll;
-        [MenuItem("Meno Tools/Particle Live Manager V1")]
-        public static void Open() => GetWindow<MenoParticleLiveManagerWindow>("Particle Live Manager V1");
+        [MenuItem("Meno Tools/パーティクルライブ制作")]
+        public static void Open() => GetWindow<MenoParticleLiveManagerWindow>("パーティクルライブ制作");
         void OnEnable()
         {
             minSize = new Vector2(420, 400);
@@ -276,9 +276,9 @@ namespace Menou.ParticleLiveManager
         {
             Undo.IncrementCurrentGroup();
             int group = Undo.GetCurrentGroup();
-            Undo.SetCurrentGroupName("Particle Live Manager V1");
+            Undo.SetCurrentGroupName("パーティクルライブ制作");
             try { action(); }
-            catch (Exception e) { report = e.Message; Debug.LogWarning("Particle Live Manager V1: " + e.Message); }
+            catch (Exception e) { report = e.Message; Debug.LogWarning("パーティクルライブ制作: " + e.Message); }
             finally { Undo.CollapseUndoOperations(group); }
         }
         void NewProfile()

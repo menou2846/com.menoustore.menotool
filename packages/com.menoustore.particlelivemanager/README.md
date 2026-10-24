@@ -1,4 +1,4 @@
-# Meno Particle Live Manager
+# Particle Live Manager
 
 Unity 2022.3 / VRChat Avatars / Modular Avatar向けのパーティクルライブ制作ツール。
 
@@ -13,7 +13,7 @@ Generatedフォルダ、制作設定、Scene、AnimationClip、Controllerは削�
 
 ## 使用
 
-1. Meno Tools → Particle Live Manager V1を開く。
+1. Unityメニュー「Meno Tools → パーティクルライブ制作」を開く。
 2. アバター・ライブ名・音源を指定し「制作を始める」。
 3. particle / skybox / FXのRecordedを編集する。TimelineとAnimationウィンドウの時間は連動する。
 4. アバターへ出力する演出は「アバター用データを作成・更新」で生成する。Sceneは手動保存。

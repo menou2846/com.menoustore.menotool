@@ -6,17 +6,17 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 
 **インストールできること**と**実際に機能が使えること**は別です。🔒が付いているパッケージは、VCCでインストールしても、購入時に配布されるパスワードで認証するまではツールの本体機能が動きません(メニューを実行すると認証ウィンドウが開くだけの状態になります)。
 
-| | パッケージID | 内容 |
+| | VCCでの表示名 | 内容 |
 |---|---|---|
-| 🔓 無料 | `com.menoustore.hierarchyvisualizer` | VRChatアバターのヒエラルキー構造を可視化するEditor拡張。Hierarchyをまとめて折りたたむ/展開する機能も同梱 |
-| 🔓 無料 | `com.menoustore.objectnamecleanup` | オブジェクト名の一括クリーンアップ |
-| 🔓 無料 | `com.menoustore.armaturepathchecker` | 2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張 |
-| 🔓 無料 | `com.menoustore.thumbnailcapture` | Post Processing Stack v2対応のサムネイル撮影Editor拡張(VRChat SDK不要、`com.unity.postprocessing`が必要) |
-| 🔓 無料 | `com.menoustore.prefabgridplacer` | 選択したプレハブをグリッド配置するEditor拡張 |
-| 🔒 **Fanbox限定(要パスワード認証)** | `com.menoustore.colorvariantapplier` | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張 |
-| 🔒 **Fanbox限定(要パスワード認証)** | `com.menoustore.physboneautobinder` | 衣装のPhysBoneのrootTransformと、VRC Constraintのソース(1個前提)を、名前でアバター本体のボーンに自動マッチングして一括設定するEditor拡張 |
-| 🔒 **Fanbox限定(要パスワード認証)** | `com.menoustore.animatorprefabduplicator` | フォルダ(Prefab / Animator / Material / Texture / FBXなど)を丸ごと新しいGUIDで複製し、フォルダ内どうしの参照を複製側へ付け替えるEditor拡張。フォルダ外への参照・効いていないPrefab上書き・未使用アセットの確認と修正、Animator付きPrefab単体の複製モードも搭載 |
-| 開発版 | `com.menoustore.particlelivemanager` | パーティクルライブ制作、Recorded編集、Timeline音源プレビュー、MA用FX生成（0.1.0・初期開発版） |
+| 🔓 無料 | **Hierarchy Visualizer** | VRChatアバターのヒエラルキー構造を可視化するEditor拡張。Hierarchyをまとめて折りたたむ/展開する機能も同梱 |
+| 🔓 無料 | **Object Name Cleanup** | オブジェクト名の一括クリーンアップ |
+| 🔓 無料 | **Armature Path Checker** | 2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張 |
+| 🔓 無料 | **Thumbnail Capture** | Post Processing Stack v2対応のサムネイル撮影Editor拡張(VRChat SDK不要、`com.unity.postprocessing`が必要) |
+| 🔓 無料 | **Prefab Grid Placer** | 選択したプレハブをグリッド配置するEditor拡張 |
+| 🔒 **Fanbox限定(要パスワード認証)** | **Color Variant Applier** | ソースプレハブのマテリアルをターゲットプレハブへパスマッチングで一括コピーする、色違い(カラバリ)量産向けEditor拡張 |
+| 🔒 **Fanbox限定(要パスワード認証)** | **PhysBone Auto Binder** | 衣装のPhysBoneのrootTransformと、VRC Constraintのソース(1個前提)を、名前でアバター本体のボーンに自動マッチングして一括設定するEditor拡張 |
+| 🔒 **Fanbox限定(要パスワード認証)** | **Folder GUID Duplicator** | フォルダ(Prefab / Animator / Material / Texture / FBXなど)を丸ごと新しいGUIDで複製し、フォルダ内どうしの参照を複製側へ付け替えるEditor拡張。フォルダ外への参照・効いていないPrefab上書き・未使用アセットの確認と修正、Animator付きPrefab単体の複製モードも搭載 |
+| 🔓 無料 | **Particle Live Manager** | アバターのパーティクルライブ制作を支援するEditor拡張。項目別のRecorded編集、Timeline音源プレビュー、Modular Avatar用FXの自動生成(Modular Avatar / NDMFが必要・初期版) |
 
 必要なものだけ個別にインストールできます。
 

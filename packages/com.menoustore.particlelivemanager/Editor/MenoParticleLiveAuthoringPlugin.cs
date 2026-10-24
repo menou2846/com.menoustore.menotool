@@ -12,7 +12,7 @@ namespace Menou.ParticleLiveManager
         internal const string Label = "MenoParticleLiveAuthoring";
         internal const string OwnerPrefix = "MenoParticleLiveOwner_";
         public override string QualifiedName => "menou.particle-live-manager.authoring";
-        public override string DisplayName => "Meno Particle Live Manager";
+        public override string DisplayName => "[menotool] Particle Live Manager";
         internal static bool IsAuthoring(UnityEngine.Object controller) => controller && AssetDatabase.GetLabels(controller).Contains(Label);
         internal static void StripControllers(GameObject avatar)
         {
