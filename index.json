@@ -552,6 +552,31 @@
           "zipSHA256": "64eaf583ec8cedac4e4419b691a04f234dafc7a696183f81cfc09c5e9a3a2a25"
         }
       }
+    },
+    "com.menoustore.particlelivemanager": {
+      "versions": {
+        "0.1.0": {
+          "name": "com.menoustore.particlelivemanager",
+          "version": "0.1.0",
+          "displayName": "Meno Particle Live Manager",
+          "description": "アバターのパーティクルライブ制作を支援するEditor拡張。項目別Recorded、Timeline音源プレビュー、MA用FX生成。",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "dependencies": {
+            "com.unity.timeline": "1.7.6"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.10.5 <4.0.0-a",
+            "nadena.dev.modular-avatar": ">=1.18.7 <2.0.0-a",
+            "nadena.dev.ndmf": ">=1.14.8 <2.0.0-a"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.particlelivemanager-0.1.0.zip",
+          "zipSHA256": "5224b53bf79018aaa2f26c457aa30fa184e512b2b4fe10ad53cd9d84ba882490"
+        }
+      }
     }
   }
 }
