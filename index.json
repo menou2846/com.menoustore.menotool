@@ -100,7 +100,7 @@
             "com.vrchat.avatars": ">=3.7.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.3.0.zip",
-          "zipSHA256": "552f9f2ad76e76958c3fafc2bc4ce8ca1cefd0917ea59017596d2603fcab39e8"
+          "zipSHA256": "86939dd7b1deea61b084bb8597bef9c2b3a464dc0425b625204a53530179849c"
         }
       }
     },
@@ -187,7 +187,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.2.0.zip",
-          "zipSHA256": "07e10512c706a92696ca5c27bd61aa5e99c182b95b842cb8614b4f98c5d76a3c"
+          "zipSHA256": "918fbf4ffc6587a9dd9e6b63d2f26ce90eb9e260bff4b65050c9a52187e82f0e"
         }
       }
     },
@@ -230,7 +230,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.2.zip",
-          "zipSHA256": "ca6a7cc17141b9527c3183dab77e990969b4e46cc07d9f94266812f970c10169"
+          "zipSHA256": "6171eaa21ca94740ed6d5ed762628cb8066948814f3cc7ec3593a43fda0f5d1a"
         }
       }
     },
@@ -295,7 +295,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.2.zip",
-          "zipSHA256": "c8f111b04a8fc35fc0099c44e1f4180ac43e039e918079d198c82df487ce3303"
+          "zipSHA256": "455a38fcd0ae7bcde3bb9352444a60201d591dbef13c09a3445717c7dc83819c"
         }
       }
     },
@@ -351,7 +351,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.3.zip",
-          "zipSHA256": "10566e7d33d50ebaad0d0dc6cb3eb887cc8bfd30d3f295957413836c780b1298"
+          "zipSHA256": "04ff9f046661c99fd7524b7218b3b400f66dd7df659f0189aa29dcf264ecf485"
         }
       }
     },
@@ -419,7 +419,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.3.zip",
-          "zipSHA256": "9e1b4a07c06c0c146f043c20e04a066f4607a99185d076f136adaa63bbbcb206"
+          "zipSHA256": "2d9b819fbab5e7354fbde001e35ab07e6bc32ee799144724da07e28c3df2b17e"
         }
       }
     },
@@ -481,7 +481,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.2.1.zip",
-          "zipSHA256": "40dbbb904ab62e0c2867d4b9d8133d2a6896aff06aad8bb8b910bcb22cb57184"
+          "zipSHA256": "a351bea331ec291012a5cbe021ba1f0d1173d3d8564387aec39486440e3fa5a5"
         }
       }
     },
@@ -549,7 +549,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.animatorprefabduplicator-1.2.1.zip",
-          "zipSHA256": "64eaf583ec8cedac4e4419b691a04f234dafc7a696183f81cfc09c5e9a3a2a25"
+          "zipSHA256": "8add29d71691f00180d28578c7fee7ad5bc699e061bb2c8dc7f302daa6d53cd0"
         }
       }
     },
@@ -558,7 +558,7 @@
         "0.1.0": {
           "name": "com.menoustore.particlelivemanager",
           "version": "0.1.0",
-          "displayName": "Meno Particle Live Manager",
+          "displayName": "[menotool] Particle Live Manager",
           "description": "アバターのパーティクルライブ制作を支援するEditor拡張。項目別Recorded、Timeline音源プレビュー、MA用FX生成。",
           "unity": "2022.3",
           "author": {
@@ -574,7 +574,7 @@
             "nadena.dev.ndmf": ">=1.14.8 <2.0.0-a"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.particlelivemanager-0.1.0.zip",
-          "zipSHA256": "5224b53bf79018aaa2f26c457aa30fa184e512b2b4fe10ad53cd9d84ba882490"
+          "zipSHA256": "d7b409911bba685b38a167dfaf65a00fe387805daed45625630b26681fa1f68b"
         }
       }
     }
