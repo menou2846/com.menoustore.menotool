@@ -101,6 +101,22 @@
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.3.0.zip",
           "zipSHA256": "86939dd7b1deea61b084bb8597bef9c2b3a464dc0425b625204a53530179849c"
+        },
+        "1.4.0": {
+          "name": "com.menoustore.hierarchyvisualizer",
+          "version": "1.4.0",
+          "displayName": "[menotool] Hierarchy Visualizer",
+          "description": "VRChatアバター/ワールドのヒエラルキー構造を可視化し、Hierarchyのまとめ折りたたみ/展開も行えるEditor拡張",
+          "unity": "2022.3",
+          "author": {
+            "name": "menou-store",
+            "url": "https://github.com/menou2846"
+          },
+          "vpmDependencies": {
+            "com.vrchat.base": ">=3.7.0"
+          },
+          "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.hierarchyvisualizer-1.4.0.zip",
+          "zipSHA256": "dfe9c08b3d618dd736671c52c0ae3343a05c627402b6826189414a99a6ab2597"
         }
       }
     },
@@ -187,7 +203,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.physboneautobinder-1.2.0.zip",
-          "zipSHA256": "918fbf4ffc6587a9dd9e6b63d2f26ce90eb9e260bff4b65050c9a52187e82f0e"
+          "zipSHA256": "4e07b3c22ad2189c3c0970443641d24615a9937bb0fc59a7e8b7b9e495412123"
         }
       }
     },
@@ -230,7 +246,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.armaturepathchecker-1.0.2.zip",
-          "zipSHA256": "6171eaa21ca94740ed6d5ed762628cb8066948814f3cc7ec3593a43fda0f5d1a"
+          "zipSHA256": "b4c6e43a76a0af0f993473938dfc57a807c65cb3980b708d40d14535e0cb7186"
         }
       }
     },
@@ -295,7 +311,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.colorvariantapplier-1.1.2.zip",
-          "zipSHA256": "455a38fcd0ae7bcde3bb9352444a60201d591dbef13c09a3445717c7dc83819c"
+          "zipSHA256": "92d6259f81099eaf675ceb8b7a0b3aae33b89c4df39b20ff29350512c3bd7d67"
         }
       }
     },
@@ -351,7 +367,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.objectnamecleanup-1.0.3.zip",
-          "zipSHA256": "04ff9f046661c99fd7524b7218b3b400f66dd7df659f0189aa29dcf264ecf485"
+          "zipSHA256": "edae39fa3966e3448f59aeafb8818ee1c39907a27d7cb93655de0da14d61c023"
         }
       }
     },
@@ -419,7 +435,7 @@
             "com.unity.postprocessing": "3.2.2"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.thumbnailcapture-1.0.3.zip",
-          "zipSHA256": "2d9b819fbab5e7354fbde001e35ab07e6bc32ee799144724da07e28c3df2b17e"
+          "zipSHA256": "42aae4ab09d23650a7884342c8917440b4c3842cd9045cd13956408063d26e3e"
         }
       }
     },
@@ -481,7 +497,7 @@
             "url": "https://github.com/menou2846"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.prefabgridplacer-1.2.1.zip",
-          "zipSHA256": "a351bea331ec291012a5cbe021ba1f0d1173d3d8564387aec39486440e3fa5a5"
+          "zipSHA256": "ea543d41a21ce3e7a243a0f54aa8695c717593aa19ff01217b880e204582381e"
         }
       }
     },
@@ -549,7 +565,7 @@
             "com.menoustore.license": "1.0.0"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.animatorprefabduplicator-1.2.1.zip",
-          "zipSHA256": "8add29d71691f00180d28578c7fee7ad5bc699e061bb2c8dc7f302daa6d53cd0"
+          "zipSHA256": "c12282cd91684595f49e6a65d744ff681bf3891f2a26f192c9ddb32c018ef491"
         }
       }
     },
@@ -574,7 +590,7 @@
             "nadena.dev.ndmf": ">=1.14.8 <2.0.0-a"
           },
           "url": "https://raw.githubusercontent.com/menou2846/com.menoustore.menotool/master/Releases/com.menoustore.particlelivemanager-0.1.0.zip",
-          "zipSHA256": "d7b409911bba685b38a167dfaf65a00fe387805daed45625630b26681fa1f68b"
+          "zipSHA256": "4064cfb0ff672825971e7ffc6a02cc0fdd27eccdc32412f3fb548d07f7842e5b"
         }
       }
     }
