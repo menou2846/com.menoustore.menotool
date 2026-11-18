@@ -8,7 +8,7 @@ menou-store が公開しているVRChatアバター制作用のEditor拡張ツ�
 
 | | VCCでの表示名 | 内容 |
 |---|---|---|
-| 🔓 無料 | **Hierarchy Visualizer** | VRChatアバターのヒエラルキー構造を可視化するEditor拡張。Hierarchyをまとめて折りたたむ/展開する機能も同梱 |
+| 🔓 無料 | **Hierarchy Visualizer** | VRChatアバター/ワールドのヒエラルキー構造を可視化するEditor拡張(ワールドプロジェクトでも導入可)。Hierarchyをまとめて折りたたむ/展開する機能も同梱 |
 | 🔓 無料 | **Object Name Cleanup** | オブジェクト名の一括クリーンアップ |
 | 🔓 無料 | **Armature Path Checker** | 2つのプレハブのアーマチュア構造を比較し、指定したボーン名のパス一致をチェックするEditor拡張 |
 | 🔓 無料 | **Thumbnail Capture** | Post Processing Stack v2対応のサムネイル撮影Editor拡張(VRChat SDK不要、`com.unity.postprocessing`が必要) |

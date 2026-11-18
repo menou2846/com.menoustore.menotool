@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.15.0] - 2026-11-19
+
+- **Hierarchy Visualizer**(v1.4.0): ワールドプロジェクトでも導入できるように変更。依存を`com.vrchat.avatars`から`com.vrchat.base`(アバター/ワールド共通SDK)に変更し、未使用だったAvatars SDKへの参照を削除。PhysBone/Collider/VRC Constraintの色分けはワールドでもそのまま動く
+
 ## [2.14.0] - 2026-10-24
 
 - 新規: **Particle Live Manager**(v0.1.0・無料)。パーティクルライブ制作の支援ツール(項目別のRecorded編集、Timeline音源プレビュー、Modular Avatar用FXの自動生成)。Modular Avatar / NDMFが必要。メニューを`Meno Tools/パーティクルライブ制作`、表示名を`[menotool] Particle Live Manager`に統一。実プロジェクトでパッケージ版のコンパイルとメニュー登録を確認(VCC実導入・SDKビルド・VRChat実機は未検証)

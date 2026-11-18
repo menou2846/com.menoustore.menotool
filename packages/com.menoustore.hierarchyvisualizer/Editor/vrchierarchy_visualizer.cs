@@ -4,7 +4,6 @@ using UnityEditor;
 using System.Linq;
 using VRC.SDK3.Dynamics.PhysBone.Components; // VRCPhysBone
 using UnityEngine.Animations; // Unity制約
-using VRC.SDK3.Avatars.Components; // VRC Constraint群
 using System.Text.RegularExpressions;
 
 [InitializeOnLoad]
